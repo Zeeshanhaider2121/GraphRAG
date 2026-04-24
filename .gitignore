@@ -1,1 +1,26 @@
-*
+# Ignore environment / secret files
+.env
+*.env
+
+# Ignore log files
+*.log
+logs/
+
+# Ignore Python cache
+__pycache__/
+*.py[cod]
+
+# Ignore virtual environment folder
+venv/
+.venv/
+venv311/
+.venv311/
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore the job_automation folder (if you want)
+job_automation/
+
+# Ignore Neo4j data folders
+data/db/
