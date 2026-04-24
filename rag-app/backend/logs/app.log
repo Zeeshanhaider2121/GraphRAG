@@ -1,0 +1,1559 @@
+2026-04-23 23:28:43,851 - app.main - INFO - Application startup
+2026-04-23 23:28:54,198 - app.main - INFO - Application shutdown
+2026-04-23 23:29:08,215 - app.main - INFO - Application startup
+2026-04-23 23:31:05,986 - app.services.embedding_service - INFO - Using Ollama embeddings via /api/embed (field=input, batch=True, dims=768).
+2026-04-23 23:41:14,931 - app.services.embedding_service - INFO - Using Ollama embeddings via /api/embed (field=input, batch=True, dims=768).
+2026-04-24 00:23:23,936 - app.main - INFO - Application startup
+2026-04-24 10:58:05,749 - app.main - INFO - Application startup
+2026-04-24 11:36:08,081 - app.main - INFO - Application shutdown
+2026-04-24 11:36:24,710 - app.main - INFO - Application startup
+2026-04-24 11:39:28,574 - app.main - INFO - Application shutdown
+2026-04-24 11:39:46,859 - app.main - INFO - Application startup
+2026-04-24 11:40:18,309 - app.main - INFO - Application shutdown
+2026-04-24 11:52:02,958 - app.main - INFO - Application startup
+2026-04-24 11:53:28,798 - app.services.ingest_service - ERROR - Ingestion failed for doc_3c16e4497d53_ff13375376be: pypdf is required for chunked PDF OCR.
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\mistral_ocr_service.py", line 140, in _split_pdf_into_chunks
+    from pypdf import PdfReader, PdfWriter
+ModuleNotFoundError: No module named 'pypdf'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\ingest_service.py", line 193, in _ingest_sync
+    ocr_result = self.ocr_service.extract_document(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\mistral_ocr_service.py", line 190, in extract_document
+    chunk_bytes_list = self._split_pdf_into_chunks(file_bytes)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\mistral_ocr_service.py", line 142, in _split_pdf_into_chunks
+    raise RuntimeError("pypdf is required for chunked PDF OCR.") from exc
+RuntimeError: pypdf is required for chunked PDF OCR.
+2026-04-24 11:54:21,166 - app.services.ingest_service - ERROR - Ingestion failed for doc_68d620179612_4ab0f190062e: 422 Client Error: Unprocessable Entity for url: https://api.mistral.ai/v1/files
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\ingest_service.py", line 193, in _ingest_sync
+    ocr_result = self.ocr_service.extract_document(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\mistral_ocr_service.py", line 175, in extract_document
+    payload = self.extract_from_bytes(file_bytes, filename, content_type)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\mistral_ocr_service.py", line 107, in extract_from_bytes
+    file_id = self._upload_file(file_bytes, filename, content_type)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\mistral_ocr_service.py", line 48, in _upload_file
+    response.raise_for_status()
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 422 Client Error: Unprocessable Entity for url: https://api.mistral.ai/v1/files
+2026-04-24 11:54:39,828 - app.services.ingest_service - ERROR - Ingestion failed for doc_68d620179612_82bab22b750b: 422 Client Error: Unprocessable Entity for url: https://api.mistral.ai/v1/files
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\ingest_service.py", line 193, in _ingest_sync
+    ocr_result = self.ocr_service.extract_document(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\mistral_ocr_service.py", line 175, in extract_document
+    payload = self.extract_from_bytes(file_bytes, filename, content_type)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\mistral_ocr_service.py", line 107, in extract_from_bytes
+    file_id = self._upload_file(file_bytes, filename, content_type)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\mistral_ocr_service.py", line 48, in _upload_file
+    response.raise_for_status()
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 422 Client Error: Unprocessable Entity for url: https://api.mistral.ai/v1/files
+2026-04-24 11:54:54,827 - app.services.ingest_service - ERROR - Ingestion failed for doc_3c16e4497d53_7bfb9c1877ff: pypdf is required for chunked PDF OCR.
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\mistral_ocr_service.py", line 140, in _split_pdf_into_chunks
+    from pypdf import PdfReader, PdfWriter
+ModuleNotFoundError: No module named 'pypdf'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\ingest_service.py", line 193, in _ingest_sync
+    ocr_result = self.ocr_service.extract_document(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\mistral_ocr_service.py", line 190, in extract_document
+    chunk_bytes_list = self._split_pdf_into_chunks(file_bytes)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\mistral_ocr_service.py", line 142, in _split_pdf_into_chunks
+    raise RuntimeError("pypdf is required for chunked PDF OCR.") from exc
+RuntimeError: pypdf is required for chunked PDF OCR.
+2026-04-24 11:56:37,000 - app.main - INFO - Application shutdown
+2026-04-24 11:58:04,755 - app.main - INFO - Application startup
+2026-04-24 11:58:24,471 - app.services.ingest_service - ERROR - Ingestion failed for doc_3c16e4497d53_e160fd9f9d19: pypdf is required for chunked PDF OCR.
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\mistral_ocr_service.py", line 140, in _split_pdf_into_chunks
+    from pypdf import PdfReader, PdfWriter
+ModuleNotFoundError: No module named 'pypdf'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\ingest_service.py", line 193, in _ingest_sync
+    ocr_result = self.ocr_service.extract_document(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\mistral_ocr_service.py", line 190, in extract_document
+    chunk_bytes_list = self._split_pdf_into_chunks(file_bytes)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\mistral_ocr_service.py", line 142, in _split_pdf_into_chunks
+    raise RuntimeError("pypdf is required for chunked PDF OCR.") from exc
+RuntimeError: pypdf is required for chunked PDF OCR.
+2026-04-24 11:58:56,148 - app.main - INFO - Application shutdown
+2026-04-24 11:59:09,659 - app.main - INFO - Application startup
+2026-04-24 11:59:42,993 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 1 processed: pages 0-99.
+2026-04-24 11:59:46,750 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 2 processed: pages 100-199.
+2026-04-24 11:59:50,708 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 3 processed: pages 200-299.
+2026-04-24 11:59:53,868 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 4 processed: pages 300-399.
+2026-04-24 11:59:56,740 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 5 processed: pages 400-498.
+2026-04-24 11:59:57,492 - app.services.ingest_service - ERROR - Ingestion failed for doc_3c16e4497d53_d1a1de8dc913: Command failed (1): C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Scripts\python.exe C:\Users\Admin\Downloads\job_automation\final_json.py C:\Users\Admin\Downloads\job_automation\ocr_response_combined_fixed.json C:\Users\Admin\Downloads\job_automation\output.json
+STDOUT:
+
+STDERR:
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\job_automation\final_json.py", line 47, in <module>
+    import mistune
+ModuleNotFoundError: No module named 'mistune'
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\ingest_service.py", line 222, in _ingest_sync
+    pipeline_result = self._run_job_automation_pipeline(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\ingest_service.py", line 94, in _run_job_automation_pipeline
+    final_json_logs = self.job_pipeline_service.run_final_json()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\job_pipeline_service.py", line 84, in run_final_json
+    return self._run(cmd)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\job_pipeline_service.py", line 50, in _run
+    raise RuntimeError(
+RuntimeError: Command failed (1): C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Scripts\python.exe C:\Users\Admin\Downloads\job_automation\final_json.py C:\Users\Admin\Downloads\job_automation\ocr_response_combined_fixed.json C:\Users\Admin\Downloads\job_automation\output.json
+STDOUT:
+
+STDERR:
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\job_automation\final_json.py", line 47, in <module>
+    import mistune
+ModuleNotFoundError: No module named 'mistune'
+
+2026-04-24 12:00:18,564 - app.main - INFO - Application shutdown
+2026-04-24 12:00:43,985 - app.main - INFO - Application startup
+2026-04-24 12:01:11,804 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 1 processed: pages 0-99.
+2026-04-24 12:01:15,640 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 2 processed: pages 100-199.
+2026-04-24 12:01:18,672 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 3 processed: pages 200-299.
+2026-04-24 12:01:20,632 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 4 processed: pages 300-399.
+2026-04-24 12:01:22,452 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 5 processed: pages 400-498.
+2026-04-24 12:01:26,771 - app.services.ingest_service - ERROR - Ingestion failed for doc_3c16e4497d53_ce16581dd710: Command failed (1): C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Scripts\python.exe C:\Users\Admin\Downloads\job_automation\final_json.py C:\Users\Admin\Downloads\job_automation\ocr_response_combined_fixed.json C:\Users\Admin\Downloads\job_automation\output.json
+STDOUT:
+
+STDERR:
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\job_automation\final_json.py", line 51, in <module>
+    from pylatexenc.latex2text import LatexNodes2Text
+ModuleNotFoundError: No module named 'pylatexenc'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\job_automation\final_json.py", line 57, in <module>
+    print("\u2717 pylatexenc not installed. Install with: pip install pylatexenc")
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\ingest_service.py", line 222, in _ingest_sync
+    pipeline_result = self._run_job_automation_pipeline(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\ingest_service.py", line 94, in _run_job_automation_pipeline
+    final_json_logs = self.job_pipeline_service.run_final_json()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\job_pipeline_service.py", line 84, in run_final_json
+    return self._run(cmd)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\job_pipeline_service.py", line 50, in _run
+    raise RuntimeError(
+RuntimeError: Command failed (1): C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Scripts\python.exe C:\Users\Admin\Downloads\job_automation\final_json.py C:\Users\Admin\Downloads\job_automation\ocr_response_combined_fixed.json C:\Users\Admin\Downloads\job_automation\output.json
+STDOUT:
+
+STDERR:
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\job_automation\final_json.py", line 51, in <module>
+    from pylatexenc.latex2text import LatexNodes2Text
+ModuleNotFoundError: No module named 'pylatexenc'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\job_automation\final_json.py", line 57, in <module>
+    print("\u2717 pylatexenc not installed. Install with: pip install pylatexenc")
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2717' in position 0: character maps to <undefined>
+
+2026-04-24 12:01:57,768 - app.main - INFO - Application shutdown
+2026-04-24 12:02:16,318 - app.main - INFO - Application startup
+2026-04-24 12:02:50,647 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 1 processed: pages 0-99.
+2026-04-24 12:02:53,171 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 2 processed: pages 100-199.
+2026-04-24 12:02:56,479 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 3 processed: pages 200-299.
+2026-04-24 12:02:58,564 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 4 processed: pages 300-399.
+2026-04-24 12:03:00,726 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 5 processed: pages 400-498.
+2026-04-24 12:03:01,197 - app.services.ingest_service - ERROR - Ingestion failed for doc_3c16e4497d53_f64ebb753b5d: Command failed (1): C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Scripts\python.exe C:\Users\Admin\Downloads\job_automation\final_json.py C:\Users\Admin\Downloads\job_automation\ocr_response_combined_fixed.json C:\Users\Admin\Downloads\job_automation\output.json
+STDOUT:
+
+STDERR:
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\job_automation\final_json.py", line 54, in <module>
+    print("\u2713 pylatexenc loaded - LaTeX conversion enabled")
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2713' in position 0: character maps to <undefined>
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\ingest_service.py", line 222, in _ingest_sync
+    pipeline_result = self._run_job_automation_pipeline(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\ingest_service.py", line 94, in _run_job_automation_pipeline
+    final_json_logs = self.job_pipeline_service.run_final_json()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\job_pipeline_service.py", line 84, in run_final_json
+    return self._run(cmd)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\job_pipeline_service.py", line 50, in _run
+    raise RuntimeError(
+RuntimeError: Command failed (1): C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Scripts\python.exe C:\Users\Admin\Downloads\job_automation\final_json.py C:\Users\Admin\Downloads\job_automation\ocr_response_combined_fixed.json C:\Users\Admin\Downloads\job_automation\output.json
+STDOUT:
+
+STDERR:
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\job_automation\final_json.py", line 54, in <module>
+    print("\u2713 pylatexenc loaded - LaTeX conversion enabled")
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2713' in position 0: character maps to <undefined>
+
+2026-04-24 12:03:55,502 - app.main - INFO - Application shutdown
+2026-04-24 12:03:59,067 - app.main - INFO - Application startup
+2026-04-24 12:04:17,188 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 1 processed: pages 0-99.
+2026-04-24 12:04:20,806 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 2 processed: pages 100-199.
+2026-04-24 12:04:23,850 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 3 processed: pages 200-299.
+2026-04-24 12:04:26,067 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 4 processed: pages 300-399.
+2026-04-24 12:04:27,859 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 5 processed: pages 400-498.
+2026-04-24 12:05:39,696 - app.services.ingest_service - ERROR - Ingestion failed for doc_3c16e4497d53_ca74d10a7b82: Command failed (1): C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Scripts\python.exe C:\Users\Admin\Downloads\job_automation\embed_nodes.py
+STDOUT:
+======================================================================
+Eurocode RAG — Embeddings + Vector & Full-text Indexes
+======================================================================
+
+  Embedding strategy:
+    1. Page    → page_embedding    (markdown — PRIMARY retrieval index)
+    2. Section → section_embedding (content  — secondary/fallback)
+    3. Tabelle / Bild / Formel     (supporting nodes)
+
+
+  Detecting Ollama API — https://651e-2407-d000-1a-16b1-7525-8789-301-526c.ngrok-free.app
+  Trying /api/embed / 'input' -> 'embeddings' ... X HTTP 404
+  Trying /api/embed / 'prompt' -> 'embeddings' ... X HTTP 404
+  Trying /api/embeddings / 'prompt' -> 'embeddings' ... X HTTP 404
+  Trying /api/embeddings / 'input' -> 'embeddings' ... X HTTP 404
+  Trying /api/embed / 'prompt' -> 'embedding' ... X HTTP 404
+  Trying /api/embeddings / 'prompt' -> 'embedding' ... X HTTP 404
+
+STDERR:
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\job_automation\embed_nodes.py", line 572, in <module>
+    main()
+  File "C:\Users\Admin\Downloads\job_automation\embed_nodes.py", line 530, in main
+    embed_fn, dims = get_embedder()
+                     ^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\job_automation\embed_nodes.py", line 115, in get_embedder
+    raise ConnectionError(f"Could not connect to Ollama at {base_url}.")
+ConnectionError: Could not connect to Ollama at https://651e-2407-d000-1a-16b1-7525-8789-301-526c.ngrok-free.app.
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\ingest_service.py", line 222, in _ingest_sync
+    pipeline_result = self._run_job_automation_pipeline(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\ingest_service.py", line 101, in _run_job_automation_pipeline
+    embed_logs = self.job_pipeline_service.run_embed_nodes()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\job_pipeline_service.py", line 106, in run_embed_nodes
+    cmd = [self.python_executable, str(self.embed_nodes_script)]
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\job_pipeline_service.py", line 52, in _run
+    if completed.returncode != 0:
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Command failed (1): C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Scripts\python.exe C:\Users\Admin\Downloads\job_automation\embed_nodes.py
+STDOUT:
+======================================================================
+Eurocode RAG — Embeddings + Vector & Full-text Indexes
+======================================================================
+
+  Embedding strategy:
+    1. Page    → page_embedding    (markdown — PRIMARY retrieval index)
+    2. Section → section_embedding (content  — secondary/fallback)
+    3. Tabelle / Bild / Formel     (supporting nodes)
+
+
+  Detecting Ollama API — https://651e-2407-d000-1a-16b1-7525-8789-301-526c.ngrok-free.app
+  Trying /api/embed / 'input' -> 'embeddings' ... X HTTP 404
+  Trying /api/embed / 'prompt' -> 'embeddings' ... X HTTP 404
+  Trying /api/embeddings / 'prompt' -> 'embeddings' ... X HTTP 404
+  Trying /api/embeddings / 'input' -> 'embeddings' ... X HTTP 404
+  Trying /api/embed / 'prompt' -> 'embedding' ... X HTTP 404
+  Trying /api/embeddings / 'prompt' -> 'embedding' ... X HTTP 404
+
+STDERR:
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\job_automation\embed_nodes.py", line 572, in <module>
+    main()
+  File "C:\Users\Admin\Downloads\job_automation\embed_nodes.py", line 530, in main
+    embed_fn, dims = get_embedder()
+                     ^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\job_automation\embed_nodes.py", line 115, in get_embedder
+    raise ConnectionError(f"Could not connect to Ollama at {base_url}.")
+ConnectionError: Could not connect to Ollama at https://651e-2407-d000-1a-16b1-7525-8789-301-526c.ngrok-free.app.
+
+2026-04-24 12:05:39,832 - app.main - INFO - Application shutdown
+2026-04-24 12:05:42,926 - app.main - INFO - Application startup
+2026-04-24 12:08:22,004 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 1 processed: pages 0-99.
+2026-04-24 12:08:23,489 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 2 processed: pages 100-199.
+2026-04-24 12:08:26,634 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 3 processed: pages 200-299.
+2026-04-24 12:08:29,305 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 4 processed: pages 300-399.
+2026-04-24 12:08:31,452 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 5 processed: pages 400-498.
+2026-04-24 12:10:41,867 - app.main - INFO - Application shutdown
+2026-04-24 12:10:48,806 - app.main - INFO - Application startup
+2026-04-24 12:11:59,979 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 1 processed: pages 0-99.
+2026-04-24 12:12:01,944 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 2 processed: pages 100-199.
+2026-04-24 12:12:04,601 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 3 processed: pages 200-299.
+2026-04-24 12:12:06,298 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 4 processed: pages 300-399.
+2026-04-24 12:12:08,194 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 5 processed: pages 400-498.
+2026-04-24 12:15:27,960 - app.main - INFO - Application shutdown
+2026-04-24 12:18:21,276 - app.main - INFO - Application startup
+2026-04-24 12:19:18,153 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 1 processed: pages 0-99.
+2026-04-24 12:19:20,481 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 2 processed: pages 100-199.
+2026-04-24 12:19:23,540 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 3 processed: pages 200-299.
+2026-04-24 12:19:26,085 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 4 processed: pages 300-399.
+2026-04-24 12:19:28,000 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 5 processed: pages 400-498.
+2026-04-24 12:19:28,955 - app.services.ingest_service - ERROR - Ingestion failed for doc_3c16e4497d53_3a27a963f5eb: Command failed (1): C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Scripts\python.exe C:\Users\Admin\Downloads\job_automation\final_json.py C:\Users\Admin\Downloads\job_automation\ocr_response_combined_fixed.json C:\Users\Admin\Downloads\job_automation\output.json
+STDOUT:
+
+STDERR:
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\job_automation\final_json.py", line 54, in <module>
+    print("\u2713 pylatexenc loaded - LaTeX conversion enabled")
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2713' in position 0: character maps to <undefined>
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\ingest_service.py", line 222, in _ingest_sync
+    pipeline_result = self._run_job_automation_pipeline(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\ingest_service.py", line 94, in _run_job_automation_pipeline
+    final_json_logs = self.job_pipeline_service.run_final_json()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\job_pipeline_service.py", line 84, in run_final_json
+    return self._run(cmd)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\job_pipeline_service.py", line 50, in _run
+    raise RuntimeError(
+RuntimeError: Command failed (1): C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Scripts\python.exe C:\Users\Admin\Downloads\job_automation\final_json.py C:\Users\Admin\Downloads\job_automation\ocr_response_combined_fixed.json C:\Users\Admin\Downloads\job_automation\output.json
+STDOUT:
+
+STDERR:
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\job_automation\final_json.py", line 54, in <module>
+    print("\u2713 pylatexenc loaded - LaTeX conversion enabled")
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2713' in position 0: character maps to <undefined>
+
+2026-04-24 12:20:41,380 - app.main - INFO - Application shutdown
+2026-04-24 12:21:26,729 - app.main - INFO - Application startup
+2026-04-24 12:21:59,094 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 1 processed: pages 0-99.
+2026-04-24 12:22:01,631 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 2 processed: pages 100-199.
+2026-04-24 12:22:04,836 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 3 processed: pages 200-299.
+2026-04-24 12:22:06,415 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 4 processed: pages 300-399.
+2026-04-24 12:22:08,728 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 5 processed: pages 400-498.
+2026-04-24 12:23:06,499 - app.services.ingest_service - ERROR - Ingestion failed for doc_3c16e4497d53_ecaed2a4e018: Command failed (1): C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Scripts\python.exe C:\Users\Admin\Downloads\job_automation\embed_nodes.py
+STDOUT:
+======================================================================
+Eurocode RAG — Embeddings + Vector & Full-text Indexes
+======================================================================
+
+  Embedding strategy:
+    1. Page    → page_embedding    (markdown — PRIMARY retrieval index)
+    2. Section → section_embedding (content  — secondary/fallback)
+    3. Tabelle / Bild / Formel     (supporting nodes)
+
+
+  Detecting Ollama API — https://651e-2407-d000-1a-16b1-7525-8789-301-526c.ngrok-free.app
+  Trying /api/embed / 'input' -> 'embeddings' ... X HTTP 404
+  Trying /api/embed / 'prompt' -> 'embeddings' ... X HTTP 404
+  Trying /api/embeddings / 'prompt' -> 'embeddings' ... X HTTP 404
+  Trying /api/embeddings / 'input' -> 'embeddings' ... X HTTP 404
+  Trying /api/embed / 'prompt' -> 'embedding' ... X HTTP 404
+  Trying /api/embeddings / 'prompt' -> 'embedding' ... X HTTP 404
+
+STDERR:
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\job_automation\embed_nodes.py", line 572, in <module>
+    main()
+  File "C:\Users\Admin\Downloads\job_automation\embed_nodes.py", line 530, in main
+    embed_fn, dims = get_embedder()
+                     ^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\job_automation\embed_nodes.py", line 115, in get_embedder
+    raise ConnectionError(f"Could not connect to Ollama at {base_url}.")
+ConnectionError: Could not connect to Ollama at https://651e-2407-d000-1a-16b1-7525-8789-301-526c.ngrok-free.app.
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\ingest_service.py", line 222, in _ingest_sync
+    pipeline_result = self._run_job_automation_pipeline(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\ingest_service.py", line 101, in _run_job_automation_pipeline
+    embed_logs = self.job_pipeline_service.run_embed_nodes()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\job_pipeline_service.py", line 107, in run_embed_nodes
+    return self._run(cmd)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\job_pipeline_service.py", line 53, in _run
+    raise RuntimeError(
+RuntimeError: Command failed (1): C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Scripts\python.exe C:\Users\Admin\Downloads\job_automation\embed_nodes.py
+STDOUT:
+======================================================================
+Eurocode RAG — Embeddings + Vector & Full-text Indexes
+======================================================================
+
+  Embedding strategy:
+    1. Page    → page_embedding    (markdown — PRIMARY retrieval index)
+    2. Section → section_embedding (content  — secondary/fallback)
+    3. Tabelle / Bild / Formel     (supporting nodes)
+
+
+  Detecting Ollama API — https://651e-2407-d000-1a-16b1-7525-8789-301-526c.ngrok-free.app
+  Trying /api/embed / 'input' -> 'embeddings' ... X HTTP 404
+  Trying /api/embed / 'prompt' -> 'embeddings' ... X HTTP 404
+  Trying /api/embeddings / 'prompt' -> 'embeddings' ... X HTTP 404
+  Trying /api/embeddings / 'input' -> 'embeddings' ... X HTTP 404
+  Trying /api/embed / 'prompt' -> 'embedding' ... X HTTP 404
+  Trying /api/embeddings / 'prompt' -> 'embedding' ... X HTTP 404
+
+STDERR:
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\job_automation\embed_nodes.py", line 572, in <module>
+    main()
+  File "C:\Users\Admin\Downloads\job_automation\embed_nodes.py", line 530, in main
+    embed_fn, dims = get_embedder()
+                     ^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\job_automation\embed_nodes.py", line 115, in get_embedder
+    raise ConnectionError(f"Could not connect to Ollama at {base_url}.")
+ConnectionError: Could not connect to Ollama at https://651e-2407-d000-1a-16b1-7525-8789-301-526c.ngrok-free.app.
+
+2026-04-24 12:36:02,781 - app.main - INFO - Application shutdown
+2026-04-24 13:59:47,337 - app.main - INFO - Application startup
+2026-04-24 14:02:26,692 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 1 processed: pages 0-99.
+2026-04-24 14:02:28,644 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 2 processed: pages 100-199.
+2026-04-24 14:02:31,472 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 3 processed: pages 200-299.
+2026-04-24 14:02:33,583 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 4 processed: pages 300-399.
+2026-04-24 14:02:35,342 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 5 processed: pages 400-498.
+2026-04-24 14:03:17,024 - app.services.ingest_service - ERROR - Ingestion failed for doc_3c16e4497d53_1ba41cc15f35: Command failed (1): C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Scripts\python.exe C:\Users\Admin\Downloads\job_automation\embed_nodes.py
+STDOUT:
+======================================================================
+Eurocode RAG — Embeddings + Vector & Full-text Indexes
+======================================================================
+
+  Embedding strategy:
+    1. Page    → page_embedding    (markdown — PRIMARY retrieval index)
+    2. Section → section_embedding (content  — secondary/fallback)
+    3. Tabelle / Bild / Formel     (supporting nodes)
+
+
+  Detecting Ollama API — https://651e-2407-d000-1a-16b1-7525-8789-301-526c.ngrok-free.app
+  Trying /api/embed / 'input' -> 'embeddings' ... X HTTP 404
+  Trying /api/embed / 'prompt' -> 'embeddings' ... X HTTP 404
+  Trying /api/embeddings / 'prompt' -> 'embeddings' ... X HTTP 404
+  Trying /api/embeddings / 'input' -> 'embeddings' ... X HTTP 404
+  Trying /api/embed / 'prompt' -> 'embedding' ... X HTTP 404
+  Trying /api/embeddings / 'prompt' -> 'embedding' ... X HTTP 404
+
+STDERR:
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\job_automation\embed_nodes.py", line 572, in <module>
+    main()
+  File "C:\Users\Admin\Downloads\job_automation\embed_nodes.py", line 530, in main
+    embed_fn, dims = get_embedder()
+                     ^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\job_automation\embed_nodes.py", line 115, in get_embedder
+    raise ConnectionError(f"Could not connect to Ollama at {base_url}.")
+ConnectionError: Could not connect to Ollama at https://651e-2407-d000-1a-16b1-7525-8789-301-526c.ngrok-free.app.
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\ingest_service.py", line 222, in _ingest_sync
+    pipeline_result = self._run_job_automation_pipeline(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\ingest_service.py", line 101, in _run_job_automation_pipeline
+    embed_logs = self.job_pipeline_service.run_embed_nodes()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\job_pipeline_service.py", line 107, in run_embed_nodes
+    return self._run(cmd)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\job_pipeline_service.py", line 53, in _run
+    raise RuntimeError(
+RuntimeError: Command failed (1): C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Scripts\python.exe C:\Users\Admin\Downloads\job_automation\embed_nodes.py
+STDOUT:
+======================================================================
+Eurocode RAG — Embeddings + Vector & Full-text Indexes
+======================================================================
+
+  Embedding strategy:
+    1. Page    → page_embedding    (markdown — PRIMARY retrieval index)
+    2. Section → section_embedding (content  — secondary/fallback)
+    3. Tabelle / Bild / Formel     (supporting nodes)
+
+
+  Detecting Ollama API — https://651e-2407-d000-1a-16b1-7525-8789-301-526c.ngrok-free.app
+  Trying /api/embed / 'input' -> 'embeddings' ... X HTTP 404
+  Trying /api/embed / 'prompt' -> 'embeddings' ... X HTTP 404
+  Trying /api/embeddings / 'prompt' -> 'embeddings' ... X HTTP 404
+  Trying /api/embeddings / 'input' -> 'embeddings' ... X HTTP 404
+  Trying /api/embed / 'prompt' -> 'embedding' ... X HTTP 404
+  Trying /api/embeddings / 'prompt' -> 'embedding' ... X HTTP 404
+
+STDERR:
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\job_automation\embed_nodes.py", line 572, in <module>
+    main()
+  File "C:\Users\Admin\Downloads\job_automation\embed_nodes.py", line 530, in main
+    embed_fn, dims = get_embedder()
+                     ^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\job_automation\embed_nodes.py", line 115, in get_embedder
+    raise ConnectionError(f"Could not connect to Ollama at {base_url}.")
+ConnectionError: Could not connect to Ollama at https://651e-2407-d000-1a-16b1-7525-8789-301-526c.ngrok-free.app.
+
+2026-04-24 14:04:11,151 - app.main - INFO - Application shutdown
+2026-04-24 15:03:31,049 - app.main - INFO - Application startup
+2026-04-24 15:05:12,498 - app.main - INFO - Application shutdown
+2026-04-24 15:05:14,606 - app.main - INFO - Application startup
+2026-04-24 15:05:16,580 - app.main - INFO - Application startup
+2026-04-24 15:05:18,217 - app.main - INFO - Application shutdown
+2026-04-24 15:05:22,621 - app.main - INFO - Application startup
+2026-04-24 15:06:39,952 - app.services.ingest_service - ERROR - Ingestion failed for doc_3c16e4497d53_307026e3833b: 'MistralOCRService' object has no attribute 'extract_header'
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\ingest_service.py", line 193, in _ingest_sync
+    ocr_result = self.ocr_service.extract_document(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\mistral_ocr_service.py", line 215, in extract_document
+    payload = self.extract_from_bytes(chunk_bytes, chunk_name, "application/pdf")
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\mistral_ocr_service.py", line 122, in extract_from_bytes
+    return self._run_ocr(file_id)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\mistral_ocr_service.py", line 70, in _run_ocr
+    if self.extract_header:
+       ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'MistralOCRService' object has no attribute 'extract_header'
+2026-04-24 15:06:48,666 - app.main - INFO - Application shutdown
+2026-04-24 15:06:54,187 - app.main - INFO - Application startup
+2026-04-24 15:07:32,793 - app.services.ingest_service - ERROR - Ingestion failed for doc_3c16e4497d53_2500d27327cf: 'MistralOCRService' object has no attribute 'extract_header'
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\ingest_service.py", line 193, in _ingest_sync
+    ocr_result = self.ocr_service.extract_document(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\mistral_ocr_service.py", line 215, in extract_document
+    payload = self.extract_from_bytes(chunk_bytes, chunk_name, "application/pdf")
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\mistral_ocr_service.py", line 122, in extract_from_bytes
+    return self._run_ocr(file_id)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\mistral_ocr_service.py", line 70, in _run_ocr
+    if self.extract_header:
+       ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'MistralOCRService' object has no attribute 'extract_header'
+2026-04-24 15:08:13,772 - app.main - INFO - Application shutdown
+2026-04-24 15:18:21,311 - app.main - INFO - Application startup
+2026-04-24 15:20:12,697 - app.main - INFO - Application shutdown
+2026-04-24 15:20:15,387 - app.main - INFO - Application startup
+2026-04-24 15:20:26,529 - app.main - INFO - Application shutdown
+2026-04-24 15:20:30,629 - app.main - INFO - Application startup
+2026-04-24 15:23:11,748 - app.main - INFO - Application shutdown
+2026-04-24 15:23:14,330 - app.main - INFO - Application startup
+2026-04-24 15:24:15,648 - app.main - INFO - Application shutdown
+2026-04-24 15:24:19,244 - app.main - INFO - Application startup
+2026-04-24 15:24:32,015 - app.main - INFO - Application shutdown
+2026-04-24 15:24:36,058 - app.main - INFO - Application startup
+2026-04-24 15:25:24,773 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 1 processed: pages 0-99.
+2026-04-24 15:25:27,565 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 2 processed: pages 100-199.
+2026-04-24 15:25:30,441 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 3 processed: pages 200-299.
+2026-04-24 15:25:32,635 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 4 processed: pages 300-399.
+2026-04-24 15:25:35,619 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 5 processed: pages 400-498.
+2026-04-24 15:26:53,953 - app.services.ingest_service - ERROR - Ingestion failed for doc_3c16e4497d53_597d210143dc: Command failed (1): C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Scripts\python.exe C:\Users\Admin\Downloads\job_automation\embed_nodes.py
+STDOUT:
+======================================================================
+Eurocode RAG — Embeddings + Vector & Full-text Indexes
+======================================================================
+
+  Embedding strategy:
+    1. Page    → page_embedding    (markdown — PRIMARY retrieval index)
+    2. Section → section_embedding (content  — secondary/fallback)
+    3. Tabelle / Bild / Formel     (supporting nodes)
+
+
+  Detecting Ollama API — https://651e-2407-d000-1a-16b1-7525-8789-301-526c.ngrok-free.app
+  Trying /api/embed / 'input' -> 'embeddings' ... X HTTP 404
+  Trying /api/embed / 'prompt' -> 'embeddings' ... X HTTP 404
+  Trying /api/embeddings / 'prompt' -> 'embeddings' ... X HTTP 404
+  Trying /api/embeddings / 'input' -> 'embeddings' ... X HTTP 404
+  Trying /api/embed / 'prompt' -> 'embedding' ... X HTTP 404
+  Trying /api/embeddings / 'prompt' -> 'embedding' ... X HTTP 404
+
+STDERR:
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\job_automation\embed_nodes.py", line 572, in <module>
+    main()
+  File "C:\Users\Admin\Downloads\job_automation\embed_nodes.py", line 530, in main
+    embed_fn, dims = get_embedder()
+                     ^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\job_automation\embed_nodes.py", line 115, in get_embedder
+    raise ConnectionError(f"Could not connect to Ollama at {base_url}.")
+ConnectionError: Could not connect to Ollama at https://651e-2407-d000-1a-16b1-7525-8789-301-526c.ngrok-free.app.
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\ingest_service.py", line 222, in _ingest_sync
+    pipeline_result = self._run_job_automation_pipeline(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\ingest_service.py", line 101, in _run_job_automation_pipeline
+    embed_logs = self.job_pipeline_service.run_embed_nodes()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\job_pipeline_service.py", line 107, in run_embed_nodes
+    return self._run(cmd)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\job_pipeline_service.py", line 53, in _run
+    raise RuntimeError(
+RuntimeError: Command failed (1): C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Scripts\python.exe C:\Users\Admin\Downloads\job_automation\embed_nodes.py
+STDOUT:
+======================================================================
+Eurocode RAG — Embeddings + Vector & Full-text Indexes
+======================================================================
+
+  Embedding strategy:
+    1. Page    → page_embedding    (markdown — PRIMARY retrieval index)
+    2. Section → section_embedding (content  — secondary/fallback)
+    3. Tabelle / Bild / Formel     (supporting nodes)
+
+
+  Detecting Ollama API — https://651e-2407-d000-1a-16b1-7525-8789-301-526c.ngrok-free.app
+  Trying /api/embed / 'input' -> 'embeddings' ... X HTTP 404
+  Trying /api/embed / 'prompt' -> 'embeddings' ... X HTTP 404
+  Trying /api/embeddings / 'prompt' -> 'embeddings' ... X HTTP 404
+  Trying /api/embeddings / 'input' -> 'embeddings' ... X HTTP 404
+  Trying /api/embed / 'prompt' -> 'embedding' ... X HTTP 404
+  Trying /api/embeddings / 'prompt' -> 'embedding' ... X HTTP 404
+
+STDERR:
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\job_automation\embed_nodes.py", line 572, in <module>
+    main()
+  File "C:\Users\Admin\Downloads\job_automation\embed_nodes.py", line 530, in main
+    embed_fn, dims = get_embedder()
+                     ^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\job_automation\embed_nodes.py", line 115, in get_embedder
+    raise ConnectionError(f"Could not connect to Ollama at {base_url}.")
+ConnectionError: Could not connect to Ollama at https://651e-2407-d000-1a-16b1-7525-8789-301-526c.ngrok-free.app.
+
+2026-04-24 15:28:04,824 - app.main - INFO - Application shutdown
+2026-04-24 15:28:33,089 - app.main - INFO - Application startup
+2026-04-24 15:29:01,574 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 1 processed: pages 0-99.
+2026-04-24 15:29:05,820 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 2 processed: pages 100-199.
+2026-04-24 15:29:22,120 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 3 processed: pages 200-299.
+2026-04-24 15:29:24,261 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 4 processed: pages 300-399.
+2026-04-24 15:29:26,013 - app.services.mistral_ocr_service - INFO - Mistral OCR chunk 5 processed: pages 400-498.
+2026-04-24 15:29:36,444 - app.services.ingest_service - ERROR - Ingestion failed for doc_3c16e4497d53_341669fdbd66: Command failed (1): C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Scripts\python.exe C:\Users\Admin\Downloads\job_automation\graph_creation.py
+STDOUT:
+Loading: C:\Users\Admin\Downloads\job_automation\output.json
+  499 pages  |  0 chapters in index
+  Book identified as: 'Unknown Book' (id=book_unknown_book)
+
+=================================================================
+  BOOK: Unknown Book
+=================================================================
+=================================================================
+
+
+Connecting to Neo4j: neo4j://127.0.0.1:7687
+
+[1/4] Schema...
+  Creating constraints + indexes...
+  Schema ready.
+[2/4] Book + Bands...
+  Book + 0 Band nodes created.
+[3/4] CategoryType nodes (front_matter / chapter / appendix)...
+  0 CategoryType nodes created.
+[4/4] Chapter nodes...
+  0 Chapter nodes created.
+
+[5/5] Loading 499 pages in batches of 50...
+
+STDERR:
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\job_automation\graph_creation.py", line 673, in main
+    s.execute_write(load_pages_batch, batch, chapter_lookup)
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\work\session.py", line 750, in execute_write
+    return self._run_transaction(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\work\session.py", line 548, in _run_transaction
+    result = transaction_function(tx, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\job_automation\graph_creation.py", line 463, in load_pages_batch
+    tx.run("""
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\work\transaction.py", line 166, in run
+    result._tx_ready_run(query, parameters)
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\work\result.py", line 131, in _tx_ready_run
+    self._run(query, parameters, None, None, None, None, None, None)
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\work\result.py", line 181, in _run
+    self._attach()
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\work\result.py", line 292, in _attach
+    self._connection.fetch_message()
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_common.py", line 180, in inner
+    func(*args, **kwargs)
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_bolt.py", line 848, in fetch_message
+    tag, fields = self.inbox.pop(
+                  ^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_common.py", line 74, in pop
+    self._buffer_one_chunk()
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_common.py", line 53, in _buffer_one_chunk
+    receive_into_buffer(self._socket, self._buffer, 2)
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_common.py", line 308, in receive_into_buffer
+    n = sock.recv_into(view[buffer.used:end], end - buffer.used)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_async_compat\network\_bolt_socket.py", line 488, in recv_into
+    return self._wait_for_io(self._socket.recv_into, buffer, nbytes)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_async_compat\network\_bolt_socket.py", line 463, in _wait_for_io
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\work\transaction.py", line 216, in _rollback
+    self._connection.fetch_all()
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_bolt.py", line 865, in fetch_all
+    detail_delta, summary_delta = self.fetch_message()
+                                  ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_bolt.py", line 848, in fetch_message
+    tag, fields = self.inbox.pop(
+                  ^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_common.py", line 74, in pop
+    self._buffer_one_chunk()
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_common.py", line 58, in _buffer_one_chunk
+    receive_into_buffer(
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_common.py", line 305, in receive_into_buffer
+    buffer.data += bytearray(end - len(buffer.data))
+BufferError: Existing exports of data: object cannot be re-sized
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\job_automation\graph_creation.py", line 775, in <module>
+    main()
+  File "C:\Users\Admin\Downloads\job_automation\graph_creation.py", line 672, in main
+    with driver.session() as s:
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\work\session.py", line 125, in __exit__
+    self.close()
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\work\session.py", line 207, in close
+    self._transaction._rollback()
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\work\transaction.py", line 222, in _rollback
+    Util.callback(self._on_closed)
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_async_compat\util.py", line 111, in callback
+    return cb(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\work\session.py", line 397, in _transaction_closed_handler
+    self._disconnect()
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\work\session.py", line 140, in _disconnect
+    return super()._disconnect(sync=sync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\work\workspace.py", line 190, in _disconnect
+    self._pool.release(self._connection)
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_pool.py", line 374, in release
+    connection.reset()
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_bolt5.py", line 330, in reset
+    self.fetch_all()
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_bolt.py", line 865, in fetch_all
+    detail_delta, summary_delta = self.fetch_message()
+                                  ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_bolt.py", line 848, in fetch_message
+    tag, fields = self.inbox.pop(
+                  ^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_common.py", line 74, in pop
+    self._buffer_one_chunk()
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_common.py", line 58, in _buffer_one_chunk
+    receive_into_buffer(
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_common.py", line 305, in receive_into_buffer
+    buffer.data += bytearray(end - len(buffer.data))
+BufferError: Existing exports of data: object cannot be re-sized
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\ingest_service.py", line 222, in _ingest_sync
+    pipeline_result = self._run_job_automation_pipeline(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\ingest_service.py", line 100, in _run_job_automation_pipeline
+    graph_logs = self.job_pipeline_service.run_graph_creation()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\job_pipeline_service.py", line 101, in run_graph_creation
+    return self._run(cmd)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\job_pipeline_service.py", line 53, in _run
+    raise RuntimeError(
+RuntimeError: Command failed (1): C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Scripts\python.exe C:\Users\Admin\Downloads\job_automation\graph_creation.py
+STDOUT:
+Loading: C:\Users\Admin\Downloads\job_automation\output.json
+  499 pages  |  0 chapters in index
+  Book identified as: 'Unknown Book' (id=book_unknown_book)
+
+=================================================================
+  BOOK: Unknown Book
+=================================================================
+=================================================================
+
+
+Connecting to Neo4j: neo4j://127.0.0.1:7687
+
+[1/4] Schema...
+  Creating constraints + indexes...
+  Schema ready.
+[2/4] Book + Bands...
+  Book + 0 Band nodes created.
+[3/4] CategoryType nodes (front_matter / chapter / appendix)...
+  0 CategoryType nodes created.
+[4/4] Chapter nodes...
+  0 Chapter nodes created.
+
+[5/5] Loading 499 pages in batches of 50...
+
+STDERR:
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\job_automation\graph_creation.py", line 673, in main
+    s.execute_write(load_pages_batch, batch, chapter_lookup)
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\work\session.py", line 750, in execute_write
+    return self._run_transaction(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\work\session.py", line 548, in _run_transaction
+    result = transaction_function(tx, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\job_automation\graph_creation.py", line 463, in load_pages_batch
+    tx.run("""
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\work\transaction.py", line 166, in run
+    result._tx_ready_run(query, parameters)
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\work\result.py", line 131, in _tx_ready_run
+    self._run(query, parameters, None, None, None, None, None, None)
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\work\result.py", line 181, in _run
+    self._attach()
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\work\result.py", line 292, in _attach
+    self._connection.fetch_message()
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_common.py", line 180, in inner
+    func(*args, **kwargs)
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_bolt.py", line 848, in fetch_message
+    tag, fields = self.inbox.pop(
+                  ^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_common.py", line 74, in pop
+    self._buffer_one_chunk()
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_common.py", line 53, in _buffer_one_chunk
+    receive_into_buffer(self._socket, self._buffer, 2)
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_common.py", line 308, in receive_into_buffer
+    n = sock.recv_into(view[buffer.used:end], end - buffer.used)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_async_compat\network\_bolt_socket.py", line 488, in recv_into
+    return self._wait_for_io(self._socket.recv_into, buffer, nbytes)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_async_compat\network\_bolt_socket.py", line 463, in _wait_for_io
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\work\transaction.py", line 216, in _rollback
+    self._connection.fetch_all()
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_bolt.py", line 865, in fetch_all
+    detail_delta, summary_delta = self.fetch_message()
+                                  ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_bolt.py", line 848, in fetch_message
+    tag, fields = self.inbox.pop(
+                  ^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_common.py", line 74, in pop
+    self._buffer_one_chunk()
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_common.py", line 58, in _buffer_one_chunk
+    receive_into_buffer(
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_common.py", line 305, in receive_into_buffer
+    buffer.data += bytearray(end - len(buffer.data))
+BufferError: Existing exports of data: object cannot be re-sized
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\job_automation\graph_creation.py", line 775, in <module>
+    main()
+  File "C:\Users\Admin\Downloads\job_automation\graph_creation.py", line 672, in main
+    with driver.session() as s:
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\work\session.py", line 125, in __exit__
+    self.close()
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\work\session.py", line 207, in close
+    self._transaction._rollback()
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\work\transaction.py", line 222, in _rollback
+    Util.callback(self._on_closed)
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_async_compat\util.py", line 111, in callback
+    return cb(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\work\session.py", line 397, in _transaction_closed_handler
+    self._disconnect()
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\work\session.py", line 140, in _disconnect
+    return super()._disconnect(sync=sync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\work\workspace.py", line 190, in _disconnect
+    self._pool.release(self._connection)
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_pool.py", line 374, in release
+    connection.reset()
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_bolt5.py", line 330, in reset
+    self.fetch_all()
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_bolt.py", line 865, in fetch_all
+    detail_delta, summary_delta = self.fetch_message()
+                                  ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_bolt.py", line 848, in fetch_message
+    tag, fields = self.inbox.pop(
+                  ^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_common.py", line 74, in pop
+    self._buffer_one_chunk()
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_common.py", line 58, in _buffer_one_chunk
+    receive_into_buffer(
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_common.py", line 305, in receive_into_buffer
+    buffer.data += bytearray(end - len(buffer.data))
+BufferError: Existing exports of data: object cannot be re-sized
+
+2026-04-24 15:29:36,529 - app.main - INFO - Application shutdown
+2026-04-24 15:42:09,862 - app.main - INFO - Application startup
+2026-04-24 15:42:59,196 - app.services.ingest_service - ERROR - Ingestion failed for doc_3c16e4497d53_268e41889412: name 'base64' is not defined
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\ingest_service.py", line 193, in _ingest_sync
+    ocr_result = self.ocr_service.extract_document(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\mistral_ocr_service.py", line 205, in extract_document
+    payload = self.extract_from_bytes(chunk_bytes, chunk_name, "application/pdf")
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\mistral_ocr_service.py", line 112, in extract_from_bytes
+    return self._run_ocr(file_id)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\mistral_ocr_service.py", line 67, in _run_ocr
+    base64_pdf = base64.b64encode(file_bytes).decode("utf-8")
+                 ^^^^^^
+NameError: name 'base64' is not defined
+2026-04-24 15:43:42,073 - app.main - INFO - Application shutdown
+2026-04-24 15:43:45,750 - app.main - INFO - Application startup
+2026-04-24 15:44:22,377 - app.services.ingest_service - ERROR - Ingestion failed for doc_3c16e4497d53_4a530a1731a9: a bytes-like object is required, not 'str'
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\ingest_service.py", line 193, in _ingest_sync
+    ocr_result = self.ocr_service.extract_document(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\mistral_ocr_service.py", line 205, in extract_document
+    payload = self.extract_from_bytes(chunk_bytes, chunk_name, "application/pdf")
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\mistral_ocr_service.py", line 112, in extract_from_bytes
+    return self._run_ocr(file_id)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\mistral_ocr_service.py", line 67, in _run_ocr
+    base64_pdf = base64.b64encode(file_bytes).decode("utf-8")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\base64.py", line 58, in b64encode
+    encoded = binascii.b2a_base64(s, newline=False)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: a bytes-like object is required, not 'str'
+2026-04-24 15:46:10,683 - app.main - INFO - Application shutdown
+2026-04-24 15:46:26,519 - app.main - INFO - Application startup
+2026-04-24 15:46:55,927 - app.services.mistral_ocr_service - INFO - OCR chunk 1/5
+2026-04-24 15:46:58,051 - app.services.mistral_ocr_service - INFO - OCR chunk 2/5
+2026-04-24 15:47:02,758 - app.services.mistral_ocr_service - INFO - OCR chunk 3/5
+2026-04-24 15:47:05,197 - app.services.mistral_ocr_service - INFO - OCR chunk 4/5
+2026-04-24 15:47:06,054 - app.services.mistral_ocr_service - INFO - OCR chunk 5/5
+2026-04-24 15:47:52,289 - app.services.ingest_service - ERROR - Ingestion failed for doc_3c16e4497d53_5dea2ee179f5: Command failed (3221225786): C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Scripts\python.exe C:\Users\Admin\Downloads\job_automation\embed_nodes.py
+STDOUT:
+
+STDERR:
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\job_automation\embed_nodes.py", line 33, in <module>
+    import requests
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\requests\__init__.py", line 164, in <module>
+    from .api import delete, get, head, options, patch, post, put, request
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\requests\api.py", line 11, in <module>
+    from . import sessions
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\requests\sessions.py", line 15, in <module>
+    from .adapters import HTTPAdapter
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\requests\adapters.py", line 81, in <module>
+    _preloaded_ssl_context.load_verify_locations(
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\ingest_service.py", line 222, in _ingest_sync
+    pipeline_result = self._run_job_automation_pipeline(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\ingest_service.py", line 101, in _run_job_automation_pipeline
+    embed_logs = self.job_pipeline_service.run_embed_nodes()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\job_pipeline_service.py", line 107, in run_embed_nodes
+    return self._run(cmd)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\job_pipeline_service.py", line 53, in _run
+    raise RuntimeError(
+RuntimeError: Command failed (3221225786): C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Scripts\python.exe C:\Users\Admin\Downloads\job_automation\embed_nodes.py
+STDOUT:
+
+STDERR:
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\job_automation\embed_nodes.py", line 33, in <module>
+    import requests
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\requests\__init__.py", line 164, in <module>
+    from .api import delete, get, head, options, patch, post, put, request
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\requests\api.py", line 11, in <module>
+    from . import sessions
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\requests\sessions.py", line 15, in <module>
+    from .adapters import HTTPAdapter
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\requests\adapters.py", line 81, in <module>
+    _preloaded_ssl_context.load_verify_locations(
+KeyboardInterrupt
+
+2026-04-24 15:47:52,415 - app.main - INFO - Application shutdown
+2026-04-24 16:00:55,075 - app.main - INFO - Application startup
+2026-04-24 16:01:27,332 - app.services.mistral_ocr_service - INFO - OCR chunk 1/5
+2026-04-24 16:01:41,189 - app.services.mistral_ocr_service - INFO - OCR chunk 2/5
+2026-04-24 16:06:15,687 - app.services.mistral_ocr_service - INFO - OCR chunk 3/5
+2026-04-24 16:06:31,910 - app.services.mistral_ocr_service - INFO - OCR chunk 4/5
+2026-04-24 16:06:44,795 - app.services.mistral_ocr_service - INFO - OCR chunk 5/5
+2026-04-24 16:07:12,761 - app.services.ingest_service - ERROR - Ingestion failed for doc_3c16e4497d53_637e02e4afdf: Command failed (1): C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Scripts\python.exe C:\Users\Admin\Downloads\job_automation\graph_creation.py
+STDOUT:
+Loading: C:\Users\Admin\Downloads\job_automation\output.json
+  499 pages  |  67 chapters in index
+  Book identified as: 'HANDBUCH EUROCODE' (id=book_handbuch_eurocode)
+
+=================================================================
+  BOOK: HANDBUCH EUROCODE
+=================================================================
+
+  ── Band 1: Allgemeine Regeln ──
+    [Front Matter]  total: 5
+      • Vorwort
+      • Inhalt
+      • Einführung
+      • Benutzerhinweise
+      • INHALT
+    [Main Chapters]  total: 12
+      • Allgemeines
+      • Grundlagen der geotechnischen Bemessung
+      • Geotechnische Unterlagen
+      • Bauüberwachung, Kontrollmessungen und Instandhaltung
+      • Instandhaltung
+      • Schüttungen, Wasserhaltung, Bodenverbesserung und Bodenbewehrung
+      • Pfahlgründungen
+      • Vertikalverschiebungen von Pfahlgründungen (Gebrauchstauglichkeit des 
+      • Verankerungen
+      • Stützbauwerke
+      • Hydraulisch verursachtes Versagen
+      • Gesamtstandsicherheit
+    [Main Chapters]  total: 3
+      • FLÄCHENGRÜNDUNGEN
+      • PFAHLGRÜNDUNGEN
+      • ERDDÄMME
+    [Appendices]  total: 10
+      • ANHANG A
+      • Anhang B (informativ)
+      • Anhang C (informativ)
+      • Anhang D
+      • Anhang E (informativ)
+      • Anhang F (informativ)
+      • ANHANG G
+      • Anhang H (informativ)
+      • ANHANG J
+      • A Anhang AA (informativ)
+
+  ── Band 2: Erkundung und Untersuchung ──
+    [Front Matter]  total: 5
+      • Vorwort
+      • Inhalt
+      • Einführung
+      • Benutzerhinweise
+      • INHALT
+    [Main Chapters]  total: 8
+      • Allgemeines
+      • Planung von Baugrunduntersuchungen
+      • Probeentnahme in Boden und Fels und Grundwassermessungen
+      • Felduntersuchungen in Boden und Fels
+      • Laborversuche für Boden und Fels
+      • Geotechnischer Untersuchungsbericht
+      • Geotechnischer Bericht
+      • A Literaturhinweise
+    [Appendices]  total: 24
+      • ANHANG A
+      • Anhang B
+      • Anhang C (informativ)
+      • ANHANG D
+      • ANHANG E
+      • ANHANG F
+      • ANHANG G
+      • ANHANG H
+      • Anhang I
+      • Anhang J
+      • Anhang K (informativ)
+      • Anhang L (informativ)
+      • ANHANG M
+      • Anhang N (informativ)
+      • ANHANG O
+      • ANHANG Q
+      • Anhang R (informativ)
+      • ANHANG S
+      • Anhang T (informativ)
+      • Anhang U (informativ)
+      • ANHANG V
+      • Anhang W (informativ)
+      • Anhang X (informativ)
+      • A Anhang AA (informativ)
+=================================================================
+
+
+Connecting to Neo4j: neo4j://127.0.0.1:7687
+
+[1/4] Schema...
+  Creating constraints + indexes...
+  Schema ready.
+[2/4] Book + Bands...
+  Book + 2 Band nodes created.
+[3/4] CategoryType nodes (front_matter / chapter / appendix)...
+  7 CategoryType nodes created.
+[4/4] Chapter nodes...
+  67 Chapter nodes created.
+
+[5/5] Loading 499 pages in batches of 50...
+
+STDERR:
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\job_automation\graph_creation.py", line 673, in main
+    s.execute_write(load_pages_batch, batch, chapter_lookup)
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\work\session.py", line 750, in execute_write
+    return self._run_transaction(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\work\session.py", line 548, in _run_transaction
+    result = transaction_function(tx, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\job_automation\graph_creation.py", line 282, in load_pages_batch
+    tx.run("""
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\work\transaction.py", line 166, in run
+    result._tx_ready_run(query, parameters)
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\work\result.py", line 131, in _tx_ready_run
+    self._run(query, parameters, None, None, None, None, None, None)
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\work\result.py", line 163, in _run
+    self._connection.run(
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_common.py", line 180, in inner
+    func(*args, **kwargs)
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_bolt5.py", line 625, in run
+    self._append(b"\x10", fields,
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_bolt.py", line 795, in _append
+    self.outbox.append_message(signature, fields, dehydration_hooks)
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_common.py", line 134, in append_message
+    self._packer.pack_struct(tag, fields, dehydration_hooks)
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_codec\packstream\v1\__init__.py", line 224, in pack_struct
+    self._pack_struct(
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_codec\packstream\v1\__init__.py", line 240, in _pack_struct
+    self._pack(field, dehydration_hooks)
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_codec\packstream\v1\__init__.py", line 67, in _pack
+    self._py_pack(data, dehydration_hooks)
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_codec\packstream\v1\__init__.py", line 144, in _py_pack
+    self._py_pack(key, dehydration_hooks)
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_codec\packstream\v1\__init__.py", line 81, in _py_pack
+    def _py_pack(self, value, dehydration_hooks=None):
+
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\job_automation\graph_creation.py", line 775, in <module>
+    main()
+  File "C:\Users\Admin\Downloads\job_automation\graph_creation.py", line 672, in main
+    with driver.session() as s:
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\work\session.py", line 125, in __exit__
+    self.close()
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\work\session.py", line 207, in close
+    self._transaction._rollback()
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\work\transaction.py", line 216, in _rollback
+    self._connection.fetch_all()
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_bolt.py", line 865, in fetch_all
+    detail_delta, summary_delta = self.fetch_message()
+                                  ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_bolt.py", line 851, in fetch_message
+    res = self._process_message(tag, fields)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_bolt5.py", line 376, in _process_message
+    response.on_failure(summary_metadata or {})
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_common.py", line 247, in on_failure
+    raise Neo4jError.hydrate(**metadata)
+neo4j.exceptions.ClientError: {code: Neo.ClientError.Request.Invalid} {message: Illegal value for field "params": Unexpected type: Expected STRING but got STRUCT}
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\ingest_service.py", line 222, in _ingest_sync
+    pipeline_result = self._run_job_automation_pipeline(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\ingest_service.py", line 100, in _run_job_automation_pipeline
+    graph_logs = self.job_pipeline_service.run_graph_creation()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\job_pipeline_service.py", line 101, in run_graph_creation
+    return self._run(cmd)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\job_pipeline_service.py", line 53, in _run
+    raise RuntimeError(
+RuntimeError: Command failed (1): C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Scripts\python.exe C:\Users\Admin\Downloads\job_automation\graph_creation.py
+STDOUT:
+Loading: C:\Users\Admin\Downloads\job_automation\output.json
+  499 pages  |  67 chapters in index
+  Book identified as: 'HANDBUCH EUROCODE' (id=book_handbuch_eurocode)
+
+=================================================================
+  BOOK: HANDBUCH EUROCODE
+=================================================================
+
+  ── Band 1: Allgemeine Regeln ──
+    [Front Matter]  total: 5
+      • Vorwort
+      • Inhalt
+      • Einführung
+      • Benutzerhinweise
+      • INHALT
+    [Main Chapters]  total: 12
+      • Allgemeines
+      • Grundlagen der geotechnischen Bemessung
+      • Geotechnische Unterlagen
+      • Bauüberwachung, Kontrollmessungen und Instandhaltung
+      • Instandhaltung
+      • Schüttungen, Wasserhaltung, Bodenverbesserung und Bodenbewehrung
+      • Pfahlgründungen
+      • Vertikalverschiebungen von Pfahlgründungen (Gebrauchstauglichkeit des 
+      • Verankerungen
+      • Stützbauwerke
+      • Hydraulisch verursachtes Versagen
+      • Gesamtstandsicherheit
+    [Main Chapters]  total: 3
+      • FLÄCHENGRÜNDUNGEN
+      • PFAHLGRÜNDUNGEN
+      • ERDDÄMME
+    [Appendices]  total: 10
+      • ANHANG A
+      • Anhang B (informativ)
+      • Anhang C (informativ)
+      • Anhang D
+      • Anhang E (informativ)
+      • Anhang F (informativ)
+      • ANHANG G
+      • Anhang H (informativ)
+      • ANHANG J
+      • A Anhang AA (informativ)
+
+  ── Band 2: Erkundung und Untersuchung ──
+    [Front Matter]  total: 5
+      • Vorwort
+      • Inhalt
+      • Einführung
+      • Benutzerhinweise
+      • INHALT
+    [Main Chapters]  total: 8
+      • Allgemeines
+      • Planung von Baugrunduntersuchungen
+      • Probeentnahme in Boden und Fels und Grundwassermessungen
+      • Felduntersuchungen in Boden und Fels
+      • Laborversuche für Boden und Fels
+      • Geotechnischer Untersuchungsbericht
+      • Geotechnischer Bericht
+      • A Literaturhinweise
+    [Appendices]  total: 24
+      • ANHANG A
+      • Anhang B
+      • Anhang C (informativ)
+      • ANHANG D
+      • ANHANG E
+      • ANHANG F
+      • ANHANG G
+      • ANHANG H
+      • Anhang I
+      • Anhang J
+      • Anhang K (informativ)
+      • Anhang L (informativ)
+      • ANHANG M
+      • Anhang N (informativ)
+      • ANHANG O
+      • ANHANG Q
+      • Anhang R (informativ)
+      • ANHANG S
+      • Anhang T (informativ)
+      • Anhang U (informativ)
+      • ANHANG V
+      • Anhang W (informativ)
+      • Anhang X (informativ)
+      • A Anhang AA (informativ)
+=================================================================
+
+
+Connecting to Neo4j: neo4j://127.0.0.1:7687
+
+[1/4] Schema...
+  Creating constraints + indexes...
+  Schema ready.
+[2/4] Book + Bands...
+  Book + 2 Band nodes created.
+[3/4] CategoryType nodes (front_matter / chapter / appendix)...
+  7 CategoryType nodes created.
+[4/4] Chapter nodes...
+  67 Chapter nodes created.
+
+[5/5] Loading 499 pages in batches of 50...
+
+STDERR:
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\job_automation\graph_creation.py", line 673, in main
+    s.execute_write(load_pages_batch, batch, chapter_lookup)
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\work\session.py", line 750, in execute_write
+    return self._run_transaction(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\work\session.py", line 548, in _run_transaction
+    result = transaction_function(tx, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\job_automation\graph_creation.py", line 282, in load_pages_batch
+    tx.run("""
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\work\transaction.py", line 166, in run
+    result._tx_ready_run(query, parameters)
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\work\result.py", line 131, in _tx_ready_run
+    self._run(query, parameters, None, None, None, None, None, None)
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\work\result.py", line 163, in _run
+    self._connection.run(
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_common.py", line 180, in inner
+    func(*args, **kwargs)
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_bolt5.py", line 625, in run
+    self._append(b"\x10", fields,
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_bolt.py", line 795, in _append
+    self.outbox.append_message(signature, fields, dehydration_hooks)
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_common.py", line 134, in append_message
+    self._packer.pack_struct(tag, fields, dehydration_hooks)
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_codec\packstream\v1\__init__.py", line 224, in pack_struct
+    self._pack_struct(
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_codec\packstream\v1\__init__.py", line 240, in _pack_struct
+    self._pack(field, dehydration_hooks)
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_codec\packstream\v1\__init__.py", line 67, in _pack
+    self._py_pack(data, dehydration_hooks)
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_codec\packstream\v1\__init__.py", line 144, in _py_pack
+    self._py_pack(key, dehydration_hooks)
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_codec\packstream\v1\__init__.py", line 81, in _py_pack
+    def _py_pack(self, value, dehydration_hooks=None):
+
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\job_automation\graph_creation.py", line 775, in <module>
+    main()
+  File "C:\Users\Admin\Downloads\job_automation\graph_creation.py", line 672, in main
+    with driver.session() as s:
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\work\session.py", line 125, in __exit__
+    self.close()
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\work\session.py", line 207, in close
+    self._transaction._rollback()
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\work\transaction.py", line 216, in _rollback
+    self._connection.fetch_all()
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_bolt.py", line 865, in fetch_all
+    detail_delta, summary_delta = self.fetch_message()
+                                  ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_bolt.py", line 851, in fetch_message
+    res = self._process_message(tag, fields)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_bolt5.py", line 376, in _process_message
+    response.on_failure(summary_metadata or {})
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Lib\site-packages\neo4j\_sync\io\_common.py", line 247, in on_failure
+    raise Neo4jError.hydrate(**metadata)
+neo4j.exceptions.ClientError: {code: Neo.ClientError.Request.Invalid} {message: Illegal value for field "params": Unexpected type: Expected STRING but got STRUCT}
+
+2026-04-24 16:07:33,033 - app.main - INFO - Application startup
+2026-04-24 16:07:53,574 - app.services.mistral_ocr_service - INFO - OCR chunk 1/5
+2026-04-24 16:07:57,531 - app.services.mistral_ocr_service - INFO - OCR chunk 2/5
+2026-04-24 16:07:58,964 - app.services.mistral_ocr_service - INFO - OCR chunk 3/5
+2026-04-24 16:08:01,786 - app.services.mistral_ocr_service - INFO - OCR chunk 4/5
+2026-04-24 16:08:02,539 - app.services.mistral_ocr_service - INFO - OCR chunk 5/5
+2026-04-24 16:08:54,447 - app.services.ingest_service - ERROR - Ingestion failed for doc_3c16e4497d53_9d175e4985ca: Command failed (1): C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Scripts\python.exe C:\Users\Admin\Downloads\job_automation\embed_nodes.py
+STDOUT:
+======================================================================
+Eurocode RAG — Embeddings + Vector & Full-text Indexes
+======================================================================
+
+  Embedding strategy:
+    1. Page    → page_embedding    (markdown — PRIMARY retrieval index)
+    2. Section → section_embedding (content  — secondary/fallback)
+    3. Tabelle / Bild / Formel     (supporting nodes)
+
+
+  Detecting Ollama API — https://651e-2407-d000-1a-16b1-7525-8789-301-526c.ngrok-free.app
+  Trying /api/embed / 'input' -> 'embeddings' ... X HTTP 404
+  Trying /api/embed / 'prompt' -> 'embeddings' ... X HTTP 404
+  Trying /api/embeddings / 'prompt' -> 'embeddings' ... X HTTP 404
+  Trying /api/embeddings / 'input' -> 'embeddings' ... X HTTP 404
+  Trying /api/embed / 'prompt' -> 'embedding' ... X HTTP 404
+  Trying /api/embeddings / 'prompt' -> 'embedding' ... X HTTP 404
+
+STDERR:
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\job_automation\embed_nodes.py", line 572, in <module>
+    main()
+  File "C:\Users\Admin\Downloads\job_automation\embed_nodes.py", line 530, in main
+    embed_fn, dims = get_embedder()
+                     ^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\job_automation\embed_nodes.py", line 115, in get_embedder
+    raise ConnectionError(f"Could not connect to Ollama at {base_url}.")
+ConnectionError: Could not connect to Ollama at https://651e-2407-d000-1a-16b1-7525-8789-301-526c.ngrok-free.app.
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\ingest_service.py", line 222, in _ingest_sync
+    pipeline_result = self._run_job_automation_pipeline(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\ingest_service.py", line 101, in _run_job_automation_pipeline
+    embed_logs = self.job_pipeline_service.run_embed_nodes()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\job_pipeline_service.py", line 107, in run_embed_nodes
+    return self._run(cmd)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\job_pipeline_service.py", line 53, in _run
+    raise RuntimeError(
+RuntimeError: Command failed (1): C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\.venv311\Scripts\python.exe C:\Users\Admin\Downloads\job_automation\embed_nodes.py
+STDOUT:
+======================================================================
+Eurocode RAG — Embeddings + Vector & Full-text Indexes
+======================================================================
+
+  Embedding strategy:
+    1. Page    → page_embedding    (markdown — PRIMARY retrieval index)
+    2. Section → section_embedding (content  — secondary/fallback)
+    3. Tabelle / Bild / Formel     (supporting nodes)
+
+
+  Detecting Ollama API — https://651e-2407-d000-1a-16b1-7525-8789-301-526c.ngrok-free.app
+  Trying /api/embed / 'input' -> 'embeddings' ... X HTTP 404
+  Trying /api/embed / 'prompt' -> 'embeddings' ... X HTTP 404
+  Trying /api/embeddings / 'prompt' -> 'embeddings' ... X HTTP 404
+  Trying /api/embeddings / 'input' -> 'embeddings' ... X HTTP 404
+  Trying /api/embed / 'prompt' -> 'embedding' ... X HTTP 404
+  Trying /api/embeddings / 'prompt' -> 'embedding' ... X HTTP 404
+
+STDERR:
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\job_automation\embed_nodes.py", line 572, in <module>
+    main()
+  File "C:\Users\Admin\Downloads\job_automation\embed_nodes.py", line 530, in main
+    embed_fn, dims = get_embedder()
+                     ^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\job_automation\embed_nodes.py", line 115, in get_embedder
+    raise ConnectionError(f"Could not connect to Ollama at {base_url}.")
+ConnectionError: Could not connect to Ollama at https://651e-2407-d000-1a-16b1-7525-8789-301-526c.ngrok-free.app.
+
+2026-04-24 16:09:00,878 - app.main - INFO - Application shutdown
+2026-04-24 17:24:16,487 - app.main - INFO - Application startup
+2026-04-24 17:24:59,180 - app.services.mistral_ocr_service - INFO - OCR chunk 1/5
+2026-04-24 17:25:01,988 - app.services.mistral_ocr_service - INFO - OCR chunk 2/5
+2026-04-24 17:25:02,887 - app.services.mistral_ocr_service - INFO - OCR chunk 3/5
+2026-04-24 17:25:05,620 - app.services.mistral_ocr_service - INFO - OCR chunk 4/5
+2026-04-24 17:25:06,874 - app.services.mistral_ocr_service - INFO - OCR chunk 5/5
+2026-04-24 17:25:08,601 - app.services.ingest_service - INFO - Running enrichment...
+2026-04-24 17:25:08,664 - app.services.ingest_service - ERROR - Ingestion failed for doc_3c16e4497d53_b9dd28c261d0: name 'process_document' is not defined
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\ingest_service.py", line 199, in _ingest_sync
+    pipeline_result = self._run_integrated_pipeline(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\ingest_service.py", line 95, in _run_integrated_pipeline
+    enriched = self.enrichment_service.enrich(combined_fixed_payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\enrichment_service.py", line 295, in enrich
+    return process_document(pages, metadata)
+           ^^^^^^^^^^^^^^^^
+NameError: name 'process_document' is not defined
+2026-04-24 17:29:21,287 - app.main - INFO - Application shutdown
+2026-04-24 17:29:27,392 - app.main - INFO - Application startup
+2026-04-24 17:30:40,856 - app.services.mistral_ocr_service - INFO - OCR chunk 1/5
+2026-04-24 17:30:43,586 - app.services.mistral_ocr_service - INFO - OCR chunk 2/5
+2026-04-24 17:30:46,481 - app.services.mistral_ocr_service - INFO - OCR chunk 3/5
+2026-04-24 17:30:48,934 - app.services.mistral_ocr_service - INFO - OCR chunk 4/5
+2026-04-24 17:30:51,123 - app.services.mistral_ocr_service - INFO - OCR chunk 5/5
+2026-04-24 17:30:52,099 - app.services.ingest_service - INFO - Running enrichment...
+2026-04-24 17:30:54,996 - app.services.ingest_service - INFO - Building graph hierarchy...
+2026-04-24 17:30:55,018 - app.services.ingest_service - ERROR - Ingestion failed for doc_3c16e4497d53_41ae65872bc8: name 're' is not defined
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\ingest_service.py", line 199, in _ingest_sync
+    pipeline_result = self._run_integrated_pipeline(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\ingest_service.py", line 107, in _run_integrated_pipeline
+    self.graph_service.build_full_hierarchy(enriched, document_id)
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\graph_service.py", line 41, in build_full_hierarchy
+    band_titles = self._extract_band_titles(pages, chapter_index)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\graph_service.py", line 154, in _extract_band_titles
+    m = re.match(r'(Band\s+\d+\s*:.*)', line.strip(), re.IGNORECASE)
+        ^^
+NameError: name 're' is not defined
+2026-04-24 17:31:42,893 - app.main - INFO - Application shutdown
+2026-04-24 17:31:46,009 - app.main - INFO - Application startup
+2026-04-24 17:32:30,049 - app.services.mistral_ocr_service - INFO - OCR chunk 1/5
+2026-04-24 17:32:32,448 - app.services.mistral_ocr_service - INFO - OCR chunk 2/5
+2026-04-24 17:32:33,497 - app.services.mistral_ocr_service - INFO - OCR chunk 3/5
+2026-04-24 17:32:36,095 - app.services.mistral_ocr_service - INFO - OCR chunk 4/5
+2026-04-24 17:32:36,889 - app.services.mistral_ocr_service - INFO - OCR chunk 5/5
+2026-04-24 17:32:38,785 - app.services.ingest_service - INFO - Running enrichment...
+2026-04-24 17:32:41,202 - app.services.ingest_service - INFO - Building graph hierarchy...
+2026-04-24 17:32:41,226 - app.services.ingest_service - ERROR - Ingestion failed for doc_3c16e4497d53_63a096f3b559: name 'defaultdict' is not defined
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\ingest_service.py", line 199, in _ingest_sync
+    pipeline_result = self._run_integrated_pipeline(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\ingest_service.py", line 107, in _run_integrated_pipeline
+    self.graph_service.build_full_hierarchy(enriched, document_id)
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\graph_service.py", line 43, in build_full_hierarchy
+    ctypes_per_band = defaultdict(set)
+                      ^^^^^^^^^^^
+NameError: name 'defaultdict' is not defined
+2026-04-24 17:33:42,613 - app.main - INFO - Application shutdown
+2026-04-24 17:34:45,550 - app.main - INFO - Application startup
+2026-04-24 17:35:10,918 - app.services.mistral_ocr_service - INFO - OCR chunk 1/5
+2026-04-24 17:35:13,351 - app.services.mistral_ocr_service - INFO - OCR chunk 2/5
+2026-04-24 17:35:14,741 - app.services.mistral_ocr_service - INFO - OCR chunk 3/5
+2026-04-24 17:35:17,472 - app.services.mistral_ocr_service - INFO - OCR chunk 4/5
+2026-04-24 17:35:18,766 - app.services.mistral_ocr_service - INFO - OCR chunk 5/5
+2026-04-24 17:35:21,196 - app.services.ingest_service - INFO - Running enrichment...
+2026-04-24 17:35:23,264 - app.services.ingest_service - INFO - Building graph hierarchy...
+2026-04-24 17:35:23,279 - app.services.ingest_service - ERROR - Ingestion failed for doc_3c16e4497d53_74ba3c6138e2: 'GraphService' object has no attribute 'driver'
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\ingest_service.py", line 199, in _ingest_sync
+    pipeline_result = self._run_integrated_pipeline(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\ingest_service.py", line 107, in _run_integrated_pipeline
+    self.graph_service.build_full_hierarchy(enriched, document_id)
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\graph_service.py", line 70, in build_full_hierarchy
+    with self.driver.session() as session:
+         ^^^^^^^^^^^
+AttributeError: 'GraphService' object has no attribute 'driver'
+2026-04-24 17:40:44,651 - app.main - INFO - Application shutdown
+2026-04-24 17:40:49,860 - app.main - INFO - Application startup
+2026-04-24 17:41:25,878 - app.services.mistral_ocr_service - INFO - OCR chunk 1/5
+2026-04-24 17:41:28,169 - app.services.mistral_ocr_service - INFO - OCR chunk 2/5
+2026-04-24 17:41:29,064 - app.services.mistral_ocr_service - INFO - OCR chunk 3/5
+2026-04-24 17:41:31,720 - app.services.mistral_ocr_service - INFO - OCR chunk 4/5
+2026-04-24 17:41:33,283 - app.services.mistral_ocr_service - INFO - OCR chunk 5/5
+2026-04-24 17:41:34,674 - app.services.ingest_service - INFO - Running enrichment...
+2026-04-24 17:41:36,877 - app.services.ingest_service - INFO - Building graph hierarchy...
+2026-04-24 17:42:25,333 - app.services.ingest_service - INFO - Creating embeddings and indexes...
+2026-04-24 17:42:25,374 - app.services.ingest_service - ERROR - Ingestion failed for doc_3c16e4497d53_f9be8fbfc880: 'EmbeddingService' object has no attribute 'vector_dimension'
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\ingest_service.py", line 199, in _ingest_sync
+    pipeline_result = self._run_integrated_pipeline(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\ingest_service.py", line 111, in _run_integrated_pipeline
+    self.embedding_pipeline.create_indexes()
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\embedding_pipeline.py", line 88, in create_indexes
+    dims = self.embedding_service.vector_dimension
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'EmbeddingService' object has no attribute 'vector_dimension'
+2026-04-25 00:37:51,998 - app.main - INFO - Application shutdown
+2026-04-25 00:37:57,390 - app.main - INFO - Application startup
