@@ -393,7 +393,7 @@ def extract_sections_with_content(markdown: str, page_index: int,
             end_line = len(lines)
         content_lines = lines[start_line + 1:end_line]
         raw_content = '\n'.join(content_lines).strip()
-        clean_content = clean_markdown_latex(raw_content)
+        clean_content = raw_content
         sections.append({
             'level': boundary['level'],
             'number': boundary['number'],

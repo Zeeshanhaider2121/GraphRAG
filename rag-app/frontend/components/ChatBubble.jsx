@@ -1,4 +1,5 @@
 import { cn } from "../utils/cn";
+import MarkdownRenderer from "./MarkdownRenderer";
 
 function ChatBubble({ role = "assistant", children }) {
   const isUser = role === "user";
@@ -12,7 +13,11 @@ function ChatBubble({ role = "assistant", children }) {
           : "border-border bg-card text-ink"
       )}
     >
-      {children}
+      {typeof children === "string" ? (
+        <MarkdownRenderer>{children}</MarkdownRenderer>
+      ) : (
+        children
+      )}
     </div>
   );
 }

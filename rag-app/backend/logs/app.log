@@ -1557,3 +1557,537 @@ Traceback (most recent call last):
 AttributeError: 'EmbeddingService' object has no attribute 'vector_dimension'
 2026-04-25 00:37:51,998 - app.main - INFO - Application shutdown
 2026-04-25 00:37:57,390 - app.main - INFO - Application startup
+2026-04-27 11:03:48,501 - app.main - INFO - Application startup
+2026-04-27 11:05:03,604 - app.services.mistral_ocr_service - INFO - OCR chunk 1/5
+2026-04-27 11:05:03,707 - app.services.ingest_service - ERROR - Ingestion failed for doc_3c16e4497d53_6bb4b7037062: MISTRAL_API_KEY is not configured.
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\ingest_service.py", line 173, in _ingest_sync
+    ocr_result = self.ocr_service.extract_document(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\mistral_ocr_service.py", line 262, in extract_document
+    payload = self._run_ocr(chunk_bytes)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\mistral_ocr_service.py", line 155, in _run_ocr
+    headers={**self._headers(), "Content-Type": "application/json"},
+               ^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\mistral_ocr_service.py", line 120, in _headers
+    raise ValueError("MISTRAL_API_KEY is not configured.")
+ValueError: MISTRAL_API_KEY is not configured.
+2026-04-27 11:05:43,117 - app.main - INFO - Application shutdown
+2026-04-27 11:05:50,415 - app.main - INFO - Application startup
+2026-04-27 11:06:24,458 - app.services.mistral_ocr_service - INFO - OCR chunk 1/5
+2026-04-27 11:06:24,610 - app.services.ingest_service - ERROR - Ingestion failed for doc_3c16e4497d53_858a54c7e732: MISTRAL_API_KEY is not configured.
+Traceback (most recent call last):
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\ingest_service.py", line 173, in _ingest_sync
+    ocr_result = self.ocr_service.extract_document(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\mistral_ocr_service.py", line 262, in extract_document
+    payload = self._run_ocr(chunk_bytes)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\mistral_ocr_service.py", line 155, in _run_ocr
+    headers={**self._headers(), "Content-Type": "application/json"},
+               ^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Downloads\projects\GraphRAG\rag-app\backend\app\services\mistral_ocr_service.py", line 120, in _headers
+    raise ValueError("MISTRAL_API_KEY is not configured.")
+ValueError: MISTRAL_API_KEY is not configured.
+2026-04-27 11:13:19,232 - app.main - INFO - Application shutdown
+2026-04-27 11:13:25,946 - app.main - INFO - Application startup
+2026-04-27 11:14:33,340 - app.main - INFO - Application shutdown
+2026-04-27 11:14:35,351 - app.main - INFO - Application startup
+2026-04-27 11:14:37,821 - app.main - INFO - Application startup
+2026-04-27 11:16:22,586 - app.services.mistral_ocr_service - INFO - OCR chunk 1/5
+2026-04-27 11:16:24,830 - app.services.mistral_ocr_service - INFO - OCR chunk 2/5
+2026-04-27 11:16:25,895 - app.services.mistral_ocr_service - INFO - OCR chunk 3/5
+2026-04-27 11:16:38,224 - app.services.mistral_ocr_service - INFO - OCR chunk 4/5
+2026-04-27 11:16:47,370 - app.services.mistral_ocr_service - INFO - OCR chunk 5/5
+2026-04-27 11:16:49,790 - app.services.ingest_service - INFO - Running enrichment...
+2026-04-27 11:16:51,705 - app.services.ingest_service - INFO - Building graph hierarchy...
+2026-04-27 11:17:38,875 - app.services.ingest_service - INFO - Creating embeddings and indexes...
+2026-04-27 11:17:39,243 - app.services.embedding_pipeline - INFO - Vector index created: page_embedding_idx
+2026-04-27 11:17:39,280 - app.services.embedding_pipeline - INFO - Vector index created: section_embedding_idx
+2026-04-27 11:17:39,316 - app.services.embedding_pipeline - INFO - Vector index created: tabelle_embedding_idx
+2026-04-27 11:17:39,352 - app.services.embedding_pipeline - INFO - Vector index created: bild_embedding_idx
+2026-04-27 11:17:39,392 - app.services.embedding_pipeline - INFO - Vector index created: formel_embedding_idx
+2026-04-27 11:17:40,405 - app.services.embedding_service - INFO - Detecting Ollama API on https://unenervated-everly-squintingly.ngrok-free.dev
+2026-04-27 11:17:43,337 - app.services.embedding_service - INFO - Ollama ready: https://unenervated-everly-squintingly.ngrok-free.dev/api/embed (dims=768, batch=True)
+2026-04-27 11:17:47,025 - app.services.embedding_pipeline - INFO - Embedded 32/476 Page nodes
+2026-04-27 11:17:50,336 - app.services.embedding_pipeline - INFO - Embedded 64/476 Page nodes
+2026-04-27 11:17:53,324 - app.services.embedding_pipeline - INFO - Embedded 96/476 Page nodes
+2026-04-27 11:17:56,251 - app.services.embedding_pipeline - INFO - Embedded 128/476 Page nodes
+2026-04-27 11:17:59,309 - app.services.embedding_pipeline - INFO - Embedded 160/476 Page nodes
+2026-04-27 11:18:02,282 - app.services.embedding_pipeline - INFO - Embedded 192/476 Page nodes
+2026-04-27 11:18:05,183 - app.services.embedding_pipeline - INFO - Embedded 224/476 Page nodes
+2026-04-27 11:18:07,868 - app.services.embedding_pipeline - INFO - Embedded 256/476 Page nodes
+2026-04-27 11:18:10,555 - app.services.embedding_pipeline - INFO - Embedded 288/476 Page nodes
+2026-04-27 11:18:13,415 - app.services.embedding_pipeline - INFO - Embedded 320/476 Page nodes
+2026-04-27 11:18:16,569 - app.services.embedding_pipeline - INFO - Embedded 352/476 Page nodes
+2026-04-27 11:18:19,557 - app.services.embedding_pipeline - INFO - Embedded 384/476 Page nodes
+2026-04-27 11:18:22,227 - app.services.embedding_pipeline - INFO - Embedded 416/476 Page nodes
+2026-04-27 11:18:25,004 - app.services.embedding_pipeline - INFO - Embedded 448/476 Page nodes
+2026-04-27 11:18:27,551 - app.services.embedding_pipeline - INFO - Embedded 476/476 Page nodes
+2026-04-27 11:18:27,552 - app.services.embedding_pipeline - INFO - Finished embedding Page: 476 written.
+2026-04-27 11:18:30,416 - app.services.embedding_pipeline - INFO - Embedded 32/1305 Section nodes
+2026-04-27 11:18:33,431 - app.services.embedding_pipeline - INFO - Embedded 64/1305 Section nodes
+2026-04-27 11:18:36,069 - app.services.embedding_pipeline - INFO - Embedded 96/1305 Section nodes
+2026-04-27 11:18:38,497 - app.services.embedding_pipeline - INFO - Embedded 128/1305 Section nodes
+2026-04-27 11:18:40,829 - app.services.embedding_pipeline - INFO - Embedded 160/1305 Section nodes
+2026-04-27 11:18:43,364 - app.services.embedding_pipeline - INFO - Embedded 192/1305 Section nodes
+2026-04-27 11:18:45,720 - app.services.embedding_pipeline - INFO - Embedded 224/1305 Section nodes
+2026-04-27 11:18:47,849 - app.services.embedding_pipeline - INFO - Embedded 256/1305 Section nodes
+2026-04-27 11:18:50,258 - app.services.embedding_pipeline - INFO - Embedded 288/1305 Section nodes
+2026-04-27 11:18:52,549 - app.services.embedding_pipeline - INFO - Embedded 320/1305 Section nodes
+2026-04-27 11:18:55,007 - app.services.embedding_pipeline - INFO - Embedded 352/1305 Section nodes
+2026-04-27 11:18:57,355 - app.services.embedding_pipeline - INFO - Embedded 384/1305 Section nodes
+2026-04-27 11:18:59,466 - app.services.embedding_pipeline - INFO - Embedded 416/1305 Section nodes
+2026-04-27 11:19:01,774 - app.services.embedding_pipeline - INFO - Embedded 448/1305 Section nodes
+2026-04-27 11:19:04,103 - app.services.embedding_pipeline - INFO - Embedded 480/1305 Section nodes
+2026-04-27 11:19:06,360 - app.services.embedding_pipeline - INFO - Embedded 512/1305 Section nodes
+2026-04-27 11:19:08,759 - app.services.embedding_pipeline - INFO - Embedded 544/1305 Section nodes
+2026-04-27 11:19:11,186 - app.services.embedding_pipeline - INFO - Embedded 576/1305 Section nodes
+2026-04-27 11:19:13,643 - app.services.embedding_pipeline - INFO - Embedded 608/1305 Section nodes
+2026-04-27 11:19:15,837 - app.services.embedding_pipeline - INFO - Embedded 640/1305 Section nodes
+2026-04-27 11:19:18,135 - app.services.embedding_pipeline - INFO - Embedded 672/1305 Section nodes
+2026-04-27 11:19:20,452 - app.services.embedding_pipeline - INFO - Embedded 704/1305 Section nodes
+2026-04-27 11:19:22,755 - app.services.embedding_pipeline - INFO - Embedded 736/1305 Section nodes
+2026-04-27 11:19:25,071 - app.services.embedding_pipeline - INFO - Embedded 768/1305 Section nodes
+2026-04-27 11:19:28,102 - app.services.embedding_pipeline - INFO - Embedded 800/1305 Section nodes
+2026-04-27 11:19:31,950 - app.services.embedding_pipeline - INFO - Embedded 832/1305 Section nodes
+2026-04-27 11:19:34,523 - app.services.embedding_pipeline - INFO - Embedded 864/1305 Section nodes
+2026-04-27 11:19:36,724 - app.services.embedding_pipeline - INFO - Embedded 896/1305 Section nodes
+2026-04-27 11:19:38,844 - app.services.embedding_pipeline - INFO - Embedded 928/1305 Section nodes
+2026-04-27 11:19:41,081 - app.services.embedding_pipeline - INFO - Embedded 960/1305 Section nodes
+2026-04-27 11:19:43,137 - app.services.embedding_pipeline - INFO - Embedded 992/1305 Section nodes
+2026-04-27 11:19:45,107 - app.services.embedding_pipeline - INFO - Embedded 1024/1305 Section nodes
+2026-04-27 11:19:47,479 - app.services.embedding_pipeline - INFO - Embedded 1056/1305 Section nodes
+2026-04-27 11:19:49,805 - app.services.embedding_pipeline - INFO - Embedded 1088/1305 Section nodes
+2026-04-27 11:19:52,050 - app.services.embedding_pipeline - INFO - Embedded 1120/1305 Section nodes
+2026-04-27 11:19:54,112 - app.services.embedding_pipeline - INFO - Embedded 1152/1305 Section nodes
+2026-04-27 11:19:56,169 - app.services.embedding_pipeline - INFO - Embedded 1184/1305 Section nodes
+2026-04-27 11:20:00,490 - app.services.embedding_pipeline - INFO - Embedded 1216/1305 Section nodes
+2026-04-27 11:20:02,584 - app.services.embedding_pipeline - INFO - Embedded 1248/1305 Section nodes
+2026-04-27 11:20:04,793 - app.services.embedding_pipeline - INFO - Embedded 1280/1305 Section nodes
+2026-04-27 11:20:06,889 - app.services.embedding_pipeline - INFO - Embedded 1305/1305 Section nodes
+2026-04-27 11:20:06,891 - app.services.embedding_pipeline - INFO - Finished embedding Section: 1305 written.
+2026-04-27 11:20:10,145 - app.services.embedding_pipeline - INFO - Embedded 32/103 Tabelle nodes
+2026-04-27 11:20:12,575 - app.services.embedding_pipeline - INFO - Embedded 64/103 Tabelle nodes
+2026-04-27 11:20:14,945 - app.services.embedding_pipeline - INFO - Embedded 96/103 Tabelle nodes
+2026-04-27 11:20:16,222 - app.services.embedding_pipeline - INFO - Embedded 103/103 Tabelle nodes
+2026-04-27 11:20:16,224 - app.services.embedding_pipeline - INFO - Finished embedding Tabelle: 103 written.
+2026-04-27 11:20:18,550 - app.services.embedding_pipeline - INFO - Embedded 32/107 Bild nodes
+2026-04-27 11:20:20,641 - app.services.embedding_pipeline - INFO - Embedded 64/107 Bild nodes
+2026-04-27 11:20:22,729 - app.services.embedding_pipeline - INFO - Embedded 96/107 Bild nodes
+2026-04-27 11:20:24,261 - app.services.embedding_pipeline - INFO - Embedded 107/107 Bild nodes
+2026-04-27 11:20:24,262 - app.services.embedding_pipeline - INFO - Finished embedding Bild: 107 written.
+2026-04-27 11:20:24,385 - app.services.embedding_pipeline - INFO - No unembedded Formel nodes.
+2026-04-27 11:26:45,588 - app.services.mistral_ocr_service - INFO - OCR chunk 1/5
+2026-04-27 11:26:47,607 - app.services.mistral_ocr_service - INFO - OCR chunk 2/5
+2026-04-27 11:26:49,273 - app.services.mistral_ocr_service - INFO - OCR chunk 3/5
+2026-04-27 11:26:51,903 - app.services.mistral_ocr_service - INFO - OCR chunk 4/5
+2026-04-27 11:26:52,718 - app.services.mistral_ocr_service - INFO - OCR chunk 5/5
+2026-04-27 11:26:54,028 - app.services.ingest_service - INFO - Running enrichment...
+2026-04-27 11:26:55,964 - app.services.ingest_service - INFO - Building graph hierarchy...
+2026-04-27 11:27:15,264 - app.services.ingest_service - INFO - Creating embeddings and indexes...
+2026-04-27 11:27:15,458 - app.services.embedding_pipeline - INFO - Vector index created: page_embedding_idx
+2026-04-27 11:27:15,485 - app.services.embedding_pipeline - INFO - Vector index created: section_embedding_idx
+2026-04-27 11:27:15,505 - app.services.embedding_pipeline - INFO - Vector index created: tabelle_embedding_idx
+2026-04-27 11:27:15,529 - app.services.embedding_pipeline - INFO - Vector index created: bild_embedding_idx
+2026-04-27 11:27:15,556 - app.services.embedding_pipeline - INFO - Vector index created: formel_embedding_idx
+2026-04-27 11:27:16,210 - app.services.embedding_service - INFO - Detecting Ollama API on https://unenervated-everly-squintingly.ngrok-free.dev
+2026-04-27 11:27:18,122 - app.services.embedding_service - INFO - Ollama ready: https://unenervated-everly-squintingly.ngrok-free.dev/api/embed (dims=768, batch=True)
+2026-04-27 11:27:20,978 - app.services.embedding_pipeline - INFO - Embedded 32/476 Page nodes
+2026-04-27 11:27:23,780 - app.services.embedding_pipeline - INFO - Embedded 64/476 Page nodes
+2026-04-27 11:27:26,605 - app.services.embedding_pipeline - INFO - Embedded 96/476 Page nodes
+2026-04-27 11:27:29,257 - app.services.embedding_pipeline - INFO - Embedded 128/476 Page nodes
+2026-04-27 11:27:31,740 - app.services.embedding_pipeline - INFO - Embedded 160/476 Page nodes
+2026-04-27 11:27:34,877 - app.services.embedding_pipeline - INFO - Embedded 192/476 Page nodes
+2026-04-27 11:27:38,936 - app.services.embedding_pipeline - INFO - Embedded 224/476 Page nodes
+2026-04-27 11:27:42,532 - app.services.embedding_pipeline - INFO - Embedded 256/476 Page nodes
+2026-04-27 11:27:45,269 - app.services.embedding_pipeline - INFO - Embedded 288/476 Page nodes
+2026-04-27 11:27:47,962 - app.services.embedding_pipeline - INFO - Embedded 320/476 Page nodes
+2026-04-27 11:27:50,753 - app.services.embedding_pipeline - INFO - Embedded 352/476 Page nodes
+2026-04-27 11:27:53,150 - app.services.embedding_pipeline - INFO - Embedded 384/476 Page nodes
+2026-04-27 11:27:56,214 - app.services.embedding_pipeline - INFO - Embedded 416/476 Page nodes
+2026-04-27 11:27:59,262 - app.services.embedding_pipeline - INFO - Embedded 448/476 Page nodes
+2026-04-27 11:28:02,544 - app.services.embedding_pipeline - INFO - Embedded 476/476 Page nodes
+2026-04-27 11:28:02,544 - app.services.embedding_pipeline - INFO - Finished embedding Page: 476 written.
+2026-04-27 11:28:05,229 - app.services.embedding_pipeline - INFO - Embedded 32/1305 Section nodes
+2026-04-27 11:28:07,829 - app.services.embedding_pipeline - INFO - Embedded 64/1305 Section nodes
+2026-04-27 11:28:11,480 - app.services.embedding_pipeline - INFO - Embedded 96/1305 Section nodes
+2026-04-27 11:28:14,032 - app.services.embedding_pipeline - INFO - Embedded 128/1305 Section nodes
+2026-04-27 11:28:16,287 - app.services.embedding_pipeline - INFO - Embedded 160/1305 Section nodes
+2026-04-27 11:28:18,742 - app.services.embedding_pipeline - INFO - Embedded 192/1305 Section nodes
+2026-04-27 11:28:21,082 - app.services.embedding_pipeline - INFO - Embedded 224/1305 Section nodes
+2026-04-27 11:28:23,402 - app.services.embedding_pipeline - INFO - Embedded 256/1305 Section nodes
+2026-04-27 11:28:25,614 - app.services.embedding_pipeline - INFO - Embedded 288/1305 Section nodes
+2026-04-27 11:28:27,733 - app.services.embedding_pipeline - INFO - Embedded 320/1305 Section nodes
+2026-04-27 11:28:29,873 - app.services.embedding_pipeline - INFO - Embedded 352/1305 Section nodes
+2026-04-27 11:28:31,844 - app.services.embedding_pipeline - INFO - Embedded 384/1305 Section nodes
+2026-04-27 11:28:34,020 - app.services.embedding_pipeline - INFO - Embedded 416/1305 Section nodes
+2026-04-27 11:28:35,991 - app.services.embedding_pipeline - INFO - Embedded 448/1305 Section nodes
+2026-04-27 11:28:38,178 - app.services.embedding_pipeline - INFO - Embedded 480/1305 Section nodes
+2026-04-27 11:28:40,320 - app.services.embedding_pipeline - INFO - Embedded 512/1305 Section nodes
+2026-04-27 11:28:42,317 - app.services.embedding_pipeline - INFO - Embedded 544/1305 Section nodes
+2026-04-27 11:28:44,285 - app.services.embedding_pipeline - INFO - Embedded 576/1305 Section nodes
+2026-04-27 11:28:46,359 - app.services.embedding_pipeline - INFO - Embedded 608/1305 Section nodes
+2026-04-27 11:28:48,353 - app.services.embedding_pipeline - INFO - Embedded 640/1305 Section nodes
+2026-04-27 11:28:50,663 - app.services.embedding_pipeline - INFO - Embedded 672/1305 Section nodes
+2026-04-27 11:28:52,954 - app.services.embedding_pipeline - INFO - Embedded 704/1305 Section nodes
+2026-04-27 11:28:54,942 - app.services.embedding_pipeline - INFO - Embedded 736/1305 Section nodes
+2026-04-27 11:28:56,941 - app.services.embedding_pipeline - INFO - Embedded 768/1305 Section nodes
+2026-04-27 11:28:59,095 - app.services.embedding_pipeline - INFO - Embedded 800/1305 Section nodes
+2026-04-27 11:29:01,379 - app.services.embedding_pipeline - INFO - Embedded 832/1305 Section nodes
+2026-04-27 11:29:03,545 - app.services.embedding_pipeline - INFO - Embedded 864/1305 Section nodes
+2026-04-27 11:29:05,595 - app.services.embedding_pipeline - INFO - Embedded 896/1305 Section nodes
+2026-04-27 11:29:07,595 - app.services.embedding_pipeline - INFO - Embedded 928/1305 Section nodes
+2026-04-27 11:29:09,562 - app.services.embedding_pipeline - INFO - Embedded 960/1305 Section nodes
+2026-04-27 11:29:11,640 - app.services.embedding_pipeline - INFO - Embedded 992/1305 Section nodes
+2026-04-27 11:29:13,769 - app.services.embedding_pipeline - INFO - Embedded 1024/1305 Section nodes
+2026-04-27 11:29:15,944 - app.services.embedding_pipeline - INFO - Embedded 1056/1305 Section nodes
+2026-04-27 11:29:18,114 - app.services.embedding_pipeline - INFO - Embedded 1088/1305 Section nodes
+2026-04-27 11:29:20,557 - app.services.embedding_pipeline - INFO - Embedded 1120/1305 Section nodes
+2026-04-27 11:29:22,796 - app.services.embedding_pipeline - INFO - Embedded 1152/1305 Section nodes
+2026-04-27 11:29:25,060 - app.services.embedding_pipeline - INFO - Embedded 1184/1305 Section nodes
+2026-04-27 11:29:27,293 - app.services.embedding_pipeline - INFO - Embedded 1216/1305 Section nodes
+2026-04-27 11:29:29,501 - app.services.embedding_pipeline - INFO - Embedded 1248/1305 Section nodes
+2026-04-27 11:29:31,642 - app.services.embedding_pipeline - INFO - Embedded 1280/1305 Section nodes
+2026-04-27 11:29:33,528 - app.services.embedding_pipeline - INFO - Embedded 1305/1305 Section nodes
+2026-04-27 11:29:33,529 - app.services.embedding_pipeline - INFO - Finished embedding Section: 1305 written.
+2026-04-27 11:29:35,631 - app.services.embedding_pipeline - INFO - Embedded 32/103 Tabelle nodes
+2026-04-27 11:29:38,173 - app.services.embedding_pipeline - INFO - Embedded 64/103 Tabelle nodes
+2026-04-27 11:29:40,324 - app.services.embedding_pipeline - INFO - Embedded 96/103 Tabelle nodes
+2026-04-27 11:29:41,721 - app.services.embedding_pipeline - INFO - Embedded 103/103 Tabelle nodes
+2026-04-27 11:29:41,722 - app.services.embedding_pipeline - INFO - Finished embedding Tabelle: 103 written.
+2026-04-27 11:29:43,756 - app.services.embedding_pipeline - INFO - Embedded 32/107 Bild nodes
+2026-04-27 11:29:45,947 - app.services.embedding_pipeline - INFO - Embedded 64/107 Bild nodes
+2026-04-27 11:29:47,901 - app.services.embedding_pipeline - INFO - Embedded 96/107 Bild nodes
+2026-04-27 11:29:49,260 - app.services.embedding_pipeline - INFO - Embedded 107/107 Bild nodes
+2026-04-27 11:29:49,260 - app.services.embedding_pipeline - INFO - Finished embedding Bild: 107 written.
+2026-04-27 11:29:49,317 - app.services.embedding_pipeline - INFO - No unembedded Formel nodes.
+2026-04-27 11:53:13,642 - app.main - INFO - Application shutdown
+2026-04-27 11:56:12,766 - app.main - INFO - Application startup
+2026-04-27 12:01:05,419 - app.main - INFO - Application shutdown
+2026-04-27 12:02:45,824 - app.main - INFO - Application startup
+2026-04-27 12:02:48,230 - app.main - INFO - Application startup
+2026-04-27 12:03:15,434 - app.services.embedding_service - INFO - Detecting Ollama API on https://unenervated-everly-squintingly.ngrok-free.dev
+2026-04-27 12:03:25,012 - app.services.embedding_service - INFO - Ollama ready: https://unenervated-everly-squintingly.ngrok-free.dev/api/embed (dims=768, batch=True)
+2026-04-27 12:03:36,293 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 12:03:36,295 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 12:03:36,296 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 12:18:24,304 - app.services.embedding_service - INFO - Detecting Ollama API on https://unenervated-everly-squintingly.ngrok-free.dev
+2026-04-27 12:18:26,327 - app.services.embedding_service - INFO - Ollama ready: https://unenervated-everly-squintingly.ngrok-free.dev/api/embed (dims=768, batch=True)
+2026-04-27 12:18:27,830 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 12:18:27,831 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 12:18:27,832 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 12:32:43,247 - app.main - INFO - Application shutdown
+2026-04-27 12:32:47,202 - app.main - INFO - Application startup
+2026-04-27 12:33:57,350 - app.services.embedding_service - INFO - Detecting Ollama API on https://unenervated-everly-squintingly.ngrok-free.dev
+2026-04-27 12:33:59,344 - app.services.embedding_service - INFO - Ollama ready: https://unenervated-everly-squintingly.ngrok-free.dev/api/embed (dims=768, batch=True)
+2026-04-27 12:37:26,772 - app.main - INFO - Application shutdown
+2026-04-27 12:37:29,493 - app.main - INFO - Application startup
+2026-04-27 12:37:37,809 - app.services.embedding_service - INFO - Detecting Ollama API on https://unenervated-everly-squintingly.ngrok-free.dev
+2026-04-27 12:37:39,348 - app.services.embedding_service - INFO - Ollama ready: https://unenervated-everly-squintingly.ngrok-free.dev/api/embed (dims=768, batch=True)
+2026-04-27 12:38:17,130 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 12:38:17,134 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 12:38:17,135 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 12:39:53,006 - app.services.embedding_service - INFO - Detecting Ollama API on https://unenervated-everly-squintingly.ngrok-free.dev
+2026-04-27 12:39:54,897 - app.services.embedding_service - INFO - Ollama ready: https://unenervated-everly-squintingly.ngrok-free.dev/api/embed (dims=768, batch=True)
+2026-04-27 12:40:30,878 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 12:40:30,879 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 12:40:30,880 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 12:48:10,176 - app.main - INFO - Application shutdown
+2026-04-27 12:56:00,771 - app.main - INFO - Application startup
+2026-04-27 12:56:55,362 - app.services.embedding_service - INFO - Detecting Ollama API on https://unenervated-everly-squintingly.ngrok-free.dev
+2026-04-27 12:56:57,606 - app.services.embedding_service - INFO - Ollama ready: https://unenervated-everly-squintingly.ngrok-free.dev/api/embed (dims=768, batch=True)
+2026-04-27 12:57:38,065 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 12:57:38,068 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 12:57:38,069 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 12:59:22,624 - app.services.embedding_service - INFO - Detecting Ollama API on https://unenervated-everly-squintingly.ngrok-free.dev
+2026-04-27 12:59:23,936 - app.services.embedding_service - INFO - Ollama ready: https://unenervated-everly-squintingly.ngrok-free.dev/api/embed (dims=768, batch=True)
+2026-04-27 12:59:55,203 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 12:59:55,205 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 12:59:55,206 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 13:02:08,877 - app.services.embedding_service - INFO - Detecting Ollama API on https://unenervated-everly-squintingly.ngrok-free.dev
+2026-04-27 13:02:10,460 - app.services.embedding_service - INFO - Ollama ready: https://unenervated-everly-squintingly.ngrok-free.dev/api/embed (dims=768, batch=True)
+2026-04-27 13:02:43,750 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 13:02:43,751 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 13:02:43,752 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 13:10:28,902 - app.services.embedding_service - INFO - Detecting Ollama API on https://unenervated-everly-squintingly.ngrok-free.dev
+2026-04-27 13:10:30,797 - app.services.embedding_service - INFO - Ollama ready: https://unenervated-everly-squintingly.ngrok-free.dev/api/embed (dims=768, batch=True)
+2026-04-27 13:10:52,808 - app.services.embedding_service - INFO - Detecting Ollama API on https://unenervated-everly-squintingly.ngrok-free.dev
+2026-04-27 13:10:54,239 - app.services.embedding_service - INFO - Ollama ready: https://unenervated-everly-squintingly.ngrok-free.dev/api/embed (dims=768, batch=True)
+2026-04-27 13:11:13,752 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 13:11:13,755 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 13:11:13,756 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 13:11:32,065 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 13:11:32,066 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 13:11:32,067 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 13:15:50,829 - app.services.embedding_service - INFO - Detecting Ollama API on https://unenervated-everly-squintingly.ngrok-free.dev
+2026-04-27 13:15:52,299 - app.services.embedding_service - INFO - Ollama ready: https://unenervated-everly-squintingly.ngrok-free.dev/api/embed (dims=768, batch=True)
+2026-04-27 13:16:25,046 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 13:16:25,047 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 13:16:25,049 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 13:20:22,655 - app.services.embedding_service - INFO - Detecting Ollama API on https://unenervated-everly-squintingly.ngrok-free.dev
+2026-04-27 13:20:24,391 - app.services.embedding_service - INFO - Ollama ready: https://unenervated-everly-squintingly.ngrok-free.dev/api/embed (dims=768, batch=True)
+2026-04-27 13:20:51,526 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 13:20:51,527 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 13:20:51,528 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 13:28:09,892 - app.services.embedding_service - INFO - Detecting Ollama API on https://unenervated-everly-squintingly.ngrok-free.dev
+2026-04-27 13:28:12,470 - app.services.embedding_service - INFO - Ollama ready: https://unenervated-everly-squintingly.ngrok-free.dev/api/embed (dims=768, batch=True)
+2026-04-27 13:28:54,604 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 13:28:54,605 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 13:28:54,607 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 13:33:32,175 - app.services.embedding_service - INFO - Detecting Ollama API on https://unenervated-everly-squintingly.ngrok-free.dev
+2026-04-27 13:33:34,664 - app.services.embedding_service - INFO - Ollama ready: https://unenervated-everly-squintingly.ngrok-free.dev/api/embed (dims=768, batch=True)
+2026-04-27 13:34:03,782 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 13:34:03,782 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 13:34:03,784 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 13:38:18,343 - app.services.embedding_service - INFO - Detecting Ollama API on https://unenervated-everly-squintingly.ngrok-free.dev
+2026-04-27 13:38:20,314 - app.services.embedding_service - INFO - Ollama ready: https://unenervated-everly-squintingly.ngrok-free.dev/api/embed (dims=768, batch=True)
+2026-04-27 13:38:58,813 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 13:38:58,815 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 13:38:58,816 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 14:59:37,490 - app.main - INFO - Application shutdown
+2026-04-27 14:59:47,652 - app.main - INFO - Application startup
+2026-04-27 15:00:01,608 - app.services.embedding_service - INFO - Detecting Ollama API on https://unenervated-everly-squintingly.ngrok-free.dev
+2026-04-27 15:00:06,581 - app.services.embedding_service - INFO - Ollama ready: https://unenervated-everly-squintingly.ngrok-free.dev/api/embed (dims=768, batch=True)
+2026-04-27 15:00:39,332 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 15:00:39,341 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 15:00:39,342 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 15:06:41,245 - app.main - INFO - Application shutdown
+2026-04-27 15:06:55,286 - app.main - INFO - Application startup
+2026-04-27 15:07:03,999 - app.main - INFO - Application shutdown
+2026-04-27 15:07:16,079 - app.main - INFO - Application startup
+2026-04-27 15:07:45,975 - app.services.embedding_service - INFO - Detecting Ollama API on https://unenervated-everly-squintingly.ngrok-free.dev
+2026-04-27 15:07:48,783 - app.services.embedding_service - INFO - Ollama ready: https://unenervated-everly-squintingly.ngrok-free.dev/api/embed (dims=768, batch=True)
+2026-04-27 15:08:29,313 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 15:08:29,314 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 15:08:29,317 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 15:10:02,997 - app.services.embedding_service - INFO - Detecting Ollama API on https://unenervated-everly-squintingly.ngrok-free.dev
+2026-04-27 15:10:05,359 - app.services.embedding_service - INFO - Ollama ready: https://unenervated-everly-squintingly.ngrok-free.dev/api/embed (dims=768, batch=True)
+2026-04-27 15:10:39,367 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 15:10:39,368 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 15:10:39,368 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 15:22:21,443 - app.services.embedding_service - INFO - Detecting Ollama API on https://unenervated-everly-squintingly.ngrok-free.dev
+2026-04-27 15:22:24,937 - app.services.embedding_service - INFO - Ollama ready: https://unenervated-everly-squintingly.ngrok-free.dev/api/embed (dims=768, batch=True)
+2026-04-27 15:22:46,734 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 15:22:46,738 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 15:22:46,740 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 15:26:01,194 - app.services.embedding_service - INFO - Detecting Ollama API on https://unenervated-everly-squintingly.ngrok-free.dev
+2026-04-27 15:26:03,310 - app.services.embedding_service - DEBUG - Probe https://unenervated-everly-squintingly.ngrok-free.dev/api/embed failed: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-04-27 15:26:20,682 - app.services.embedding_service - INFO - Ollama ready: https://unenervated-everly-squintingly.ngrok-free.dev/api/embeddings (dims=768, batch=False)
+2026-04-27 15:26:42,119 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 15:26:42,123 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 15:26:42,125 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 15:38:31,618 - app.main - INFO - Application shutdown
+2026-04-27 15:38:35,431 - app.main - INFO - Application startup
+2026-04-27 15:42:04,229 - app.main - INFO - Application shutdown
+2026-04-27 15:42:13,207 - app.main - INFO - Application startup
+2026-04-27 15:42:22,258 - app.main - INFO - Application startup
+2026-04-27 15:46:57,095 - app.main - INFO - Application shutdown
+2026-04-27 15:47:00,623 - app.main - INFO - Application startup
+2026-04-27 15:47:24,806 - app.services.mistral_ocr_service - INFO - OCR chunk 1/5
+2026-04-27 15:47:26,999 - app.services.mistral_ocr_service - INFO - OCR chunk 2/5
+2026-04-27 15:47:28,064 - app.services.mistral_ocr_service - INFO - OCR chunk 3/5
+2026-04-27 15:47:31,828 - app.services.mistral_ocr_service - INFO - OCR chunk 4/5
+2026-04-27 15:47:33,145 - app.services.mistral_ocr_service - INFO - OCR chunk 5/5
+2026-04-27 15:47:34,512 - app.services.ingest_service - INFO - Running enrichment...
+2026-04-27 15:47:36,481 - app.services.ingest_service - INFO - Building graph hierarchy...
+2026-04-27 15:48:09,175 - app.services.ingest_service - INFO - Creating embeddings and indexes...
+2026-04-27 15:48:09,201 - app.services.embedding_pipeline - INFO - Vector index created: page_embedding_idx
+2026-04-27 15:48:09,216 - app.services.embedding_pipeline - INFO - Vector index created: section_embedding_idx
+2026-04-27 15:48:09,230 - app.services.embedding_pipeline - INFO - Vector index created: tabelle_embedding_idx
+2026-04-27 15:48:09,246 - app.services.embedding_pipeline - INFO - Vector index created: bild_embedding_idx
+2026-04-27 15:48:09,264 - app.services.embedding_pipeline - INFO - Vector index created: formel_embedding_idx
+2026-04-27 15:48:09,483 - app.services.embedding_service - INFO - Detecting Ollama API on https://unenervated-everly-squintingly.ngrok-free.dev
+2026-04-27 15:48:12,153 - app.services.embedding_service - INFO - Ollama ready: https://unenervated-everly-squintingly.ngrok-free.dev/api/embed (dims=768, batch=True)
+2026-04-27 15:48:17,676 - app.services.embedding_pipeline - INFO - Embedded 32/476 Page nodes
+2026-04-27 15:48:21,794 - app.services.embedding_pipeline - INFO - Embedded 64/476 Page nodes
+2026-04-27 15:48:26,467 - app.services.embedding_pipeline - INFO - Embedded 96/476 Page nodes
+2026-04-27 15:48:29,615 - app.services.embedding_pipeline - INFO - Embedded 128/476 Page nodes
+2026-04-27 15:48:32,798 - app.services.embedding_pipeline - INFO - Embedded 160/476 Page nodes
+2026-04-27 15:48:36,811 - app.services.embedding_pipeline - INFO - Embedded 192/476 Page nodes
+2026-04-27 15:48:40,242 - app.services.embedding_pipeline - INFO - Embedded 224/476 Page nodes
+2026-04-27 15:48:43,452 - app.services.embedding_pipeline - INFO - Embedded 256/476 Page nodes
+2026-04-27 15:48:47,280 - app.services.embedding_pipeline - INFO - Embedded 288/476 Page nodes
+2026-04-27 15:48:51,212 - app.services.embedding_pipeline - INFO - Embedded 320/476 Page nodes
+2026-04-27 15:48:54,384 - app.services.embedding_pipeline - INFO - Embedded 352/476 Page nodes
+2026-04-27 15:48:57,951 - app.services.embedding_pipeline - INFO - Embedded 384/476 Page nodes
+2026-04-27 15:49:01,197 - app.services.embedding_pipeline - INFO - Embedded 416/476 Page nodes
+2026-04-27 15:49:04,395 - app.services.embedding_pipeline - INFO - Embedded 448/476 Page nodes
+2026-04-27 15:49:09,502 - app.services.embedding_pipeline - INFO - Embedded 476/476 Page nodes
+2026-04-27 15:49:09,504 - app.services.embedding_pipeline - INFO - Finished embedding Page: 476 written.
+2026-04-27 15:49:20,047 - app.services.embedding_pipeline - INFO - Embedded 32/1305 Section nodes
+2026-04-27 15:49:23,471 - app.services.embedding_pipeline - INFO - Embedded 64/1305 Section nodes
+2026-04-27 15:49:25,983 - app.services.embedding_pipeline - INFO - Embedded 96/1305 Section nodes
+2026-04-27 15:49:31,407 - app.services.embedding_pipeline - INFO - Embedded 128/1305 Section nodes
+2026-04-27 15:49:34,832 - app.services.embedding_pipeline - INFO - Embedded 160/1305 Section nodes
+2026-04-27 15:49:38,453 - app.services.embedding_pipeline - INFO - Embedded 192/1305 Section nodes
+2026-04-27 15:49:41,134 - app.services.embedding_pipeline - INFO - Embedded 224/1305 Section nodes
+2026-04-27 15:49:47,733 - app.services.embedding_pipeline - INFO - Embedded 256/1305 Section nodes
+2026-04-27 15:49:53,394 - app.services.embedding_pipeline - INFO - Embedded 288/1305 Section nodes
+2026-04-27 15:49:56,985 - app.services.embedding_pipeline - INFO - Embedded 320/1305 Section nodes
+2026-04-27 15:50:01,658 - app.services.embedding_pipeline - INFO - Embedded 352/1305 Section nodes
+2026-04-27 15:50:08,532 - app.services.embedding_pipeline - INFO - Embedded 384/1305 Section nodes
+2026-04-27 15:50:16,037 - app.services.embedding_pipeline - INFO - Embedded 416/1305 Section nodes
+2026-04-27 15:50:19,677 - app.services.embedding_pipeline - INFO - Embedded 448/1305 Section nodes
+2026-04-27 15:50:22,442 - app.services.embedding_pipeline - INFO - Embedded 480/1305 Section nodes
+2026-04-27 15:50:25,908 - app.services.embedding_pipeline - INFO - Embedded 512/1305 Section nodes
+2026-04-27 15:50:29,522 - app.services.embedding_pipeline - INFO - Embedded 544/1305 Section nodes
+2026-04-27 15:50:34,721 - app.services.embedding_pipeline - INFO - Embedded 576/1305 Section nodes
+2026-04-27 15:50:40,315 - app.services.embedding_pipeline - INFO - Embedded 608/1305 Section nodes
+2026-04-27 15:50:44,281 - app.services.embedding_pipeline - INFO - Embedded 640/1305 Section nodes
+2026-04-27 15:50:47,550 - app.services.embedding_pipeline - INFO - Embedded 672/1305 Section nodes
+2026-04-27 15:50:49,864 - app.services.embedding_pipeline - INFO - Embedded 704/1305 Section nodes
+2026-04-27 15:50:54,744 - app.services.embedding_pipeline - INFO - Embedded 736/1305 Section nodes
+2026-04-27 15:50:57,670 - app.services.embedding_pipeline - INFO - Embedded 768/1305 Section nodes
+2026-04-27 15:50:59,940 - app.services.embedding_pipeline - INFO - Embedded 800/1305 Section nodes
+2026-04-27 15:51:02,555 - app.services.embedding_pipeline - INFO - Embedded 832/1305 Section nodes
+2026-04-27 15:51:04,965 - app.services.embedding_pipeline - INFO - Embedded 864/1305 Section nodes
+2026-04-27 15:51:07,939 - app.services.embedding_pipeline - INFO - Embedded 896/1305 Section nodes
+2026-04-27 15:51:10,276 - app.services.embedding_pipeline - INFO - Embedded 928/1305 Section nodes
+2026-04-27 15:51:12,681 - app.services.embedding_pipeline - INFO - Embedded 960/1305 Section nodes
+2026-04-27 15:51:14,957 - app.services.embedding_pipeline - INFO - Embedded 992/1305 Section nodes
+2026-04-27 15:51:17,194 - app.services.embedding_pipeline - INFO - Embedded 1024/1305 Section nodes
+2026-04-27 15:51:19,788 - app.services.embedding_pipeline - INFO - Embedded 1056/1305 Section nodes
+2026-04-27 15:51:23,212 - app.services.embedding_pipeline - INFO - Embedded 1088/1305 Section nodes
+2026-04-27 15:51:28,928 - app.services.embedding_pipeline - INFO - Embedded 1120/1305 Section nodes
+2026-04-27 15:51:32,519 - app.services.embedding_pipeline - INFO - Embedded 1152/1305 Section nodes
+2026-04-27 15:51:35,706 - app.services.embedding_pipeline - INFO - Embedded 1184/1305 Section nodes
+2026-04-27 15:51:38,809 - app.services.embedding_pipeline - INFO - Embedded 1216/1305 Section nodes
+2026-04-27 15:51:41,878 - app.services.embedding_pipeline - INFO - Embedded 1248/1305 Section nodes
+2026-04-27 15:51:47,025 - app.services.embedding_pipeline - INFO - Embedded 1280/1305 Section nodes
+2026-04-27 15:51:49,910 - app.services.embedding_pipeline - INFO - Embedded 1305/1305 Section nodes
+2026-04-27 15:51:49,911 - app.services.embedding_pipeline - INFO - Finished embedding Section: 1305 written.
+2026-04-27 15:51:52,429 - app.services.embedding_pipeline - INFO - Embedded 32/103 Tabelle nodes
+2026-04-27 15:51:55,805 - app.services.embedding_pipeline - INFO - Embedded 64/103 Tabelle nodes
+2026-04-27 15:51:58,064 - app.services.embedding_pipeline - INFO - Embedded 96/103 Tabelle nodes
+2026-04-27 15:51:59,744 - app.services.embedding_pipeline - INFO - Embedded 103/103 Tabelle nodes
+2026-04-27 15:51:59,745 - app.services.embedding_pipeline - INFO - Finished embedding Tabelle: 103 written.
+2026-04-27 15:52:01,952 - app.services.embedding_pipeline - INFO - Embedded 32/107 Bild nodes
+2026-04-27 15:52:04,456 - app.services.embedding_pipeline - INFO - Embedded 64/107 Bild nodes
+2026-04-27 15:52:06,950 - app.services.embedding_pipeline - INFO - Embedded 96/107 Bild nodes
+2026-04-27 15:52:08,579 - app.services.embedding_pipeline - INFO - Embedded 107/107 Bild nodes
+2026-04-27 15:52:08,580 - app.services.embedding_pipeline - INFO - Finished embedding Bild: 107 written.
+2026-04-27 15:52:08,589 - app.services.embedding_pipeline - INFO - No unembedded Formel nodes.
+2026-04-27 15:56:53,889 - app.services.embedding_service - INFO - Detecting Ollama API on https://unenervated-everly-squintingly.ngrok-free.dev
+2026-04-27 15:56:55,684 - app.services.embedding_service - INFO - Ollama ready: https://unenervated-everly-squintingly.ngrok-free.dev/api/embed (dims=768, batch=True)
+2026-04-27 15:57:32,501 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 15:57:32,506 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 15:57:32,507 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 16:10:49,029 - app.services.embedding_service - INFO - Detecting Ollama API on https://unenervated-everly-squintingly.ngrok-free.dev
+2026-04-27 16:10:51,127 - app.services.embedding_service - INFO - Ollama ready: https://unenervated-everly-squintingly.ngrok-free.dev/api/embed (dims=768, batch=True)
+2026-04-27 16:11:26,461 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 16:11:26,467 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 16:11:26,469 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 16:14:31,228 - app.services.embedding_service - INFO - Detecting Ollama API on https://unenervated-everly-squintingly.ngrok-free.dev
+2026-04-27 16:14:32,869 - app.services.embedding_service - INFO - Ollama ready: https://unenervated-everly-squintingly.ngrok-free.dev/api/embed (dims=768, batch=True)
+2026-04-27 16:15:06,152 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 16:15:06,159 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 16:15:06,161 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 16:20:02,088 - app.services.embedding_service - INFO - Detecting Ollama API on https://unenervated-everly-squintingly.ngrok-free.dev
+2026-04-27 16:20:04,526 - app.services.embedding_service - INFO - Ollama ready: https://unenervated-everly-squintingly.ngrok-free.dev/api/embed (dims=768, batch=True)
+2026-04-27 16:20:44,985 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 16:20:44,989 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 16:20:44,991 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 16:25:10,499 - app.services.embedding_service - INFO - Detecting Ollama API on https://unenervated-everly-squintingly.ngrok-free.dev
+2026-04-27 16:25:14,061 - app.services.embedding_service - INFO - Ollama ready: https://unenervated-everly-squintingly.ngrok-free.dev/api/embed (dims=768, batch=True)
+2026-04-27 16:26:07,819 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 16:26:07,824 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 16:26:07,825 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 16:36:39,107 - app.services.embedding_service - INFO - Detecting Ollama API on https://unenervated-everly-squintingly.ngrok-free.dev
+2026-04-27 16:36:41,519 - app.services.embedding_service - INFO - Ollama ready: https://unenervated-everly-squintingly.ngrok-free.dev/api/embed (dims=768, batch=True)
+2026-04-27 16:37:17,941 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 16:37:17,943 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 16:37:17,946 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 16:51:53,447 - app.services.embedding_service - INFO - Detecting Ollama API on https://unenervated-everly-squintingly.ngrok-free.dev
+2026-04-27 16:51:55,521 - app.services.embedding_service - INFO - Ollama ready: https://unenervated-everly-squintingly.ngrok-free.dev/api/embed (dims=768, batch=True)
+2026-04-27 16:52:28,394 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 16:52:28,400 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 16:52:28,401 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 16:56:59,072 - app.services.embedding_service - INFO - Detecting Ollama API on https://unenervated-everly-squintingly.ngrok-free.dev
+2026-04-27 16:57:01,038 - app.services.embedding_service - INFO - Ollama ready: https://unenervated-everly-squintingly.ngrok-free.dev/api/embed (dims=768, batch=True)
+2026-04-27 16:57:39,851 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 16:57:39,852 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 16:57:39,853 - app.services.retrieval_service - WARNING - Full‑text search failed (
+CALL db.index.fullt): Session.run() got multiple values for argument 'query'
+2026-04-27 17:20:07,670 - app.main - INFO - Application shutdown

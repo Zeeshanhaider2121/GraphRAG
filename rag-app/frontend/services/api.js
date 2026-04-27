@@ -13,7 +13,7 @@ function shouldRetryWithFallback(error) {
 
 const api = axios.create({
   baseURL: configuredApiBaseUrl,
-  timeout: 30000,
+  timeout: 120000,
   headers: {
     Accept: "application/json",
   },

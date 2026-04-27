@@ -93,7 +93,8 @@ class Settings(BaseSettings):
         return False
 
     class Config:
-        env_file = (".env", "../.env")
+        env_file = (".env", "../.env", "../../.env")
+
         case_sensitive = False
         extra = "ignore"
 
